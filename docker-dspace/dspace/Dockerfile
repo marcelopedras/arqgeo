@@ -120,7 +120,7 @@ RUN cd dspace && ../maven/bin/mvn package \
 
 # Install root filesystem
 ADD ./rootfs /
-COPY ./config/local.cfg.UTF-8 /dspace/config
+COPY ./config/local.cfg /dspace/config
 
 VOLUME $DSPACE_HOME/assetstore
 VOLUME $DSPACE_HOME/config
