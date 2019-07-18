@@ -33,7 +33,7 @@ ENV DSPACE_VERSION=6.3 \
     MAVEN_MAJOR=3 \
     MAVEN_VERSION=3.6.0
 
-ENV DPSACE_TGZ_URL=https://github.com/DSpace/DSpace/releases/download/dspace-$DSPACE_VERSION/dspace-$DSPACE_VERSION-release.tar.gz \
+ENV DPSACE_TGZ_URL=https://github.com/DSpace/DSpace/releases/download/dspace-$DSPACE_VERSION/dspace-$DSPACE_VERSION-src-release.tar.gz \
     MAVEN_TGZ_URL=http://apache.mirror.iweb.ca/maven/maven-$MAVEN_MAJOR/$MAVEN_VERSION/binaries/apache-maven-$MAVEN_VERSION-bin.tar.gz \
     TOMCAT_TGZ_URL=https://www.apache.org/dist/tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz
 
@@ -96,27 +96,31 @@ COPY ./config/setenv.sh "$CATALINA_HOME"/bin
 COPY ./config/server.xml "$CATALINA_HOME"/conf
 
 # Getting and unpacking Dspace
-RUN mkdir -p dspace \
-    && curl -L "$DPSACE_TGZ_URL" -o dspace.tar.gz \
-    && tar -xf dspace.tar.gz --strip-components=1  -C dspace \
-    && rm -rf dspace.tar.gz
+# RUN mkdir /dspace
+#     && curl -L "$DPSACE_TGZ_URL" -o dspace.tar.gz \
+#     && tar -xf dspace.tar.gz --strip-components=1  -C dspace \
+#     && rm -rf dspace.tar.gz
 
-# # If you wanto to use the source version put this line on
-# # between the 1st line of next "RUN" command and "cd dspace"
-# git clone https://github.com/unixelias/dspace.git -b dspace-6_x dspace &&
+ADD ./app/dspace-6.3-src-release dspace
 
-# Build, install and clean
+# # # If you wanto to use the source version put this line on
+# # # between the 1st line of next "RUN" command and "cd dspace"
+# # git clone https://github.com/unixelias/dspace.git -b dspace-6_x dspace &&
+
+# # Build, install and clean
 RUN cd dspace && ../maven/bin/mvn package \
     && cd dspace/target/dspace-installer \
     && ant init_installation init_configs install_code copy_webapps \
     && rm -fr "$CATALINA_HOME/webapps" && mv -f /dspace/webapps "$CATALINA_HOME" \
     && sed -i s/CONFIDENTIAL/NONE/ /usr/local/tomcat/webapps/rest/WEB-INF/web.xml \
-    && rm -fr ~/.m2 && rm -fr /tmp/* && apt-get remove -y ant \
+    && rm -fr /tmp/* && apt-get remove -y ant \
+    #&& rm -fr ~/.m2 && rm -fr /tmp/* && apt-get remove -y ant \
     && rm -rf /usr/local/tomcat/webapps/oai \
     && rm -rf /usr/local/tomcat/webapps/sword \
     && rm -rf /usr/local/tomcat/webapps/swordv2 \
-    && rm -rf /usr/local/tomcat/webapps/xmlui \
-    && apt-get clean && rm -rf /var/lib/apt/lists/*
+    && rm -rf /usr/local/tomcat/webapps/xmlui 
+    # \
+    # && apt-get clean && rm -rf /var/lib/apt/lists/*
 
 # Install root filesystem
 ADD ./rootfs /
