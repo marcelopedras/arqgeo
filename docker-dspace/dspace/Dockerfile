@@ -108,12 +108,12 @@ ADD ./app/dspace-6.3-src-release dspace
 # # git clone https://github.com/unixelias/dspace.git -b dspace-6_x dspace &&
 
 # # Build, install and clean
-RUN cd dspace && ../maven/bin/mvn package \
+RUN cd dspace && ../maven/bin/mvn package -P '!dspace-oai,!dspace-sword,!dspace-sword2,!dspace-xmlui' \
     && cd dspace/target/dspace-installer \
     && ant init_installation init_configs install_code copy_webapps \
     && rm -fr "$CATALINA_HOME/webapps" && mv -f /dspace/webapps "$CATALINA_HOME" \
     && sed -i s/CONFIDENTIAL/NONE/ /usr/local/tomcat/webapps/rest/WEB-INF/web.xml \
-    && rm -fr /tmp/* && apt-get remove -y ant \
+#    && rm -fr /tmp/* && apt-get remove -y ant \
     #&& rm -fr ~/.m2 && rm -fr /tmp/* && apt-get remove -y ant \
     && rm -rf /usr/local/tomcat/webapps/oai \
     && rm -rf /usr/local/tomcat/webapps/sword \
