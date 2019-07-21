@@ -53,6 +53,7 @@ WORKDIR /tmp
 # Install pre dependencies and set locales
 RUN apt-get update \
     && apt-get install -y --no-install-recommends \
+    apt-utils
     bzip2 \
     curl \
     git \
@@ -61,14 +62,14 @@ RUN apt-get update \
     unzip \
     vim \
     xz-utils \
-    && locale-gen pt en es \
-    && echo "pt_BR pt_BR.UTF-8" >> /etc/locale.alias \
-    && unlink /etc/localtime \
-    && ln -s /usr/share/zoneinfo/Brazil/East /etc/localtime \
-    && dpkg-reconfigure tzdata \
+    && locale-gen pt_BR.utf8 en_US \
+#    && echo "pt_BR pt_BR.UTF-8" >> /etc/locale.alias \
+#    && unlink /etc/localtime \
+#    && ln -s /usr/share/zoneinfo/Brazil/East /etc/localtime \
+#    && dpkg-reconfigure tzdata \
     && apt-get clean && rm -rf /var/lib/apt/lists/*
 
-ENV LANG='pt_BR.UTF-8' LANGUAGE='pt_BR:pt:en' LC_ALL='pt_BR.UTF-8'
+#ENV LANG='pt_BR.UTF-8' LANGUAGE='pt_BR:pt:en' LC_ALL='pt_BR.UTF-8'
 
 # Install build dependencies and Java OpenJDK ubuntu latest
 RUN apt-get update && apt-get upgrade -y\
@@ -100,6 +101,8 @@ COPY ./config/server.xml "$CATALINA_HOME"/conf
 #     && curl -L "$DPSACE_TGZ_URL" -o dspace.tar.gz \
 #     && tar -xf dspace.tar.gz --strip-components=1  -C dspace \
 #     && rm -rf dspace.tar.gz
+
+ADD ./cache/.m2 /root/.m2
 
 ADD ./app/dspace-6.3-src-release dspace
 
