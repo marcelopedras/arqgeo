@@ -1,16 +1,14 @@
 version: "3"
 services:
   postgres:
-    image: postgres
+    #image: postgres
+    build: ./postgres
     hostname: postgres
     restart: always
     volumes:
       - db_data:/var/lib/postgresql/data
 
   dspace:
-    #image: java_dev:latest
-    # If you wanto to change the configuration you can build again 
-    # and add custom config files 
     build: .
     ports:
       - 80:8080
