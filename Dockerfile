@@ -78,7 +78,7 @@ RUN rm -rf /usr/local/tomcat/webapps/oai \
 ADD ./dspace/rootfs /
 COPY ./dspace/config/local.cfg /dspace/config
 COPY ./dspace/config/noticias-topo.html /dspace/config/noticias-topo.html
-COPY ./dspace/config/noticias-lado.html /dspace/config/noticias-lado.htmlt
+COPY ./dspace/config/noticias-lado.html /dspace/config/noticias-lado.html
 
 WORKDIR /dspace
 
