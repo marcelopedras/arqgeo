@@ -1,3 +1,11 @@
+FROM maven:3.6.1-jdk-8-alpine as cache
+COPY ./dspace/app/dspace-6.3-src-release /usr/src/dspace
+WORKDIR /usr/src/dspace
+RUN mvn dependency:resolve
+
+
+
+
 FROM debian:9
 
 ENV DEBIAN_FRONTEND=noninteractive
@@ -52,7 +60,7 @@ COPY ./dspace/config/server.xml "$CATALINA_HOME"/conf
 ADD ./dspace/app/dspace-6.3-src-release dspace
 
 # Add .m2 cache to project
-ADD ./cache/.m2 /root/.m2
+COPY --from=cache /root/.m2 /root/.m2
 
 RUN cd dspace && mvn clean package
 RUN cd dspace/dspace/target/dspace-installer \
@@ -69,6 +77,8 @@ RUN rm -rf /usr/local/tomcat/webapps/oai \
 # Install root filesystem
 ADD ./dspace/rootfs /
 COPY ./dspace/config/local.cfg /dspace/config
+COPY ./dspace/config/noticias-topo.html /dspace/config/noticias-topo.html
+COPY ./dspace/config/noticias-lado.html /dspace/config/noticias-lado.htmlt
 
 WORKDIR /dspace
 

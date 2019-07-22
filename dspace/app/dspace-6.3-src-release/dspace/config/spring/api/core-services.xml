@@ -60,7 +60,10 @@
    		<property name="acceptableFilenames">
 			<list>
 				<value>news-top.html</value>
+                <value>noticias-topo.html</value>
+
 				<value>news-side.html</value>
+                <value>noticias-lado.html</value>
 			</list>
 		</property>
 	</bean>
