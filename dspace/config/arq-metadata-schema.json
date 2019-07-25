@@ -1,0 +1,660 @@
+{
+  "schemaID": 5,
+  "prefix": "arq",
+  "namespace": "http://arqdata",
+  "expand": [
+    "fields"
+  ],
+  "metadataFields": [
+    {
+      "fieldId": 140,
+      "name": "arq.collection.name",
+      "element": "collection",
+      "qualifier": "name",
+      "description": "Denominação. Nome dado ao artefato.",
+      "parentSchema": null,
+      "expand": []
+    },
+    {
+      "fieldId": 146,
+      "name": "arq.contributor.researcher",
+      "element": "contributor",
+      "qualifier": "researcher",
+      "description": "Nome do pesquisador responsável.",
+      "parentSchema": null,
+      "expand": []
+    },
+    {
+      "fieldId": 149,
+      "name": "arq.contributor.researcheraddress",
+      "element": "contributor",
+      "qualifier": "researcheraddress",
+      "description": "Endereço do pesquisador.",
+      "parentSchema": null,
+      "expand": []
+    },
+    {
+      "fieldId": 148,
+      "name": "arq.contributor.researcheremail",
+      "element": "contributor",
+      "qualifier": "researcheremail",
+      "description": "Email do pesquisador.",
+      "parentSchema": null,
+      "expand": []
+    },
+    {
+      "fieldId": 147,
+      "name": "arq.contributor.researcherphone",
+      "element": "contributor",
+      "qualifier": "researcherphone",
+      "description": "Telefone do pesquisador responsável.",
+      "parentSchema": null,
+      "expand": []
+    },
+    {
+      "fieldId": 137,
+      "name": "arq.coverage.city",
+      "element": "coverage",
+      "qualifier": "city",
+      "description": "Município onde o sítio está localizado.",
+      "parentSchema": null,
+      "expand": []
+    },
+    {
+      "fieldId": 136,
+      "name": "arq.coverage.geographicregion",
+      "element": "coverage",
+      "qualifier": "geographicregion",
+      "description": "Região geográfica onde o sítio se encontra.",
+      "parentSchema": null,
+      "expand": []
+    },
+    {
+      "fieldId": 138,
+      "name": "arq.coverage.state",
+      "element": "coverage",
+      "qualifier": "state",
+      "description": "Estado onde está localizo o município.",
+      "parentSchema": null,
+      "expand": []
+    },
+    {
+      "fieldId": 150,
+      "name": "arq.date.addedtocollection",
+      "element": "date",
+      "qualifier": "addedtocollection",
+      "description": "Data de incorporação no acervo.",
+      "parentSchema": null,
+      "expand": []
+    },
+    {
+      "fieldId": 141,
+      "name": "arq.description",
+      "element": "description",
+      "qualifier": null,
+      "description": "Descrição textual do artefato.",
+      "parentSchema": null,
+      "expand": []
+    },
+    {
+      "fieldId": 166,
+      "name": "arq.format.measure",
+      "element": "format",
+      "qualifier": "measure",
+      "description": "Medidas. Largura, comprimento, altura, diâmetro, profundidade.",
+      "parentSchema": null,
+      "expand": []
+    },
+    {
+      "fieldId": 167,
+      "name": "arq.format.weight",
+      "element": "format",
+      "qualifier": "weight",
+      "description": "Peso.",
+      "parentSchema": null,
+      "expand": []
+    },
+    {
+      "fieldId": 135,
+      "name": "arq.identifier.processnumber",
+      "element": "identifier",
+      "qualifier": "processnumber",
+      "description": "Número do processo.",
+      "parentSchema": null,
+      "expand": []
+    },
+    {
+      "fieldId": 139,
+      "name": "arq.identifier.recordnumber",
+      "element": "identifier",
+      "qualifier": "recordnumber",
+      "description": "Número do registro.",
+      "parentSchema": null,
+      "expand": []
+    },
+    {
+      "fieldId": 154,
+      "name": "arq.image",
+      "element": "image",
+      "qualifier": null,
+      "description": "Fotos do artefato.",
+      "parentSchema": null,
+      "expand": []
+    },
+    {
+      "fieldId": 151,
+      "name": "arq.location.boxid",
+      "element": "location",
+      "qualifier": "boxid",
+      "description": "Identificação da caixa onde se encontra o artefato.",
+      "parentSchema": null,
+      "expand": []
+    },
+    {
+      "fieldId": 153,
+      "name": "arq.location.shelfid",
+      "element": "location",
+      "qualifier": "shelfid",
+      "description": "Identificação da prateleira onde está o artefato.",
+      "parentSchema": null,
+      "expand": []
+    },
+    {
+      "fieldId": 152,
+      "name": "arq.location.shelflevel",
+      "element": "location",
+      "qualifier": "shelflevel",
+      "description": "Identificação de qual estante da prateleira está a caixa do artefato.",
+      "parentSchema": null,
+      "expand": []
+    },
+    {
+      "fieldId": 156,
+      "name": "arq.medium.type",
+      "element": "medium",
+      "qualifier": "type",
+      "description": "Materiais que compõem o artefato. Borracha, Carvão, Cerâmica, Faiança, Porcelana, Couro, Fóssil, Lítico, Madeira, Malacológico, Metal, Osso, Papel, Sedimento, Plástico, Têxtil, Flora, Fauna, Vidro, Indeterminado ou Outros.",
+      "parentSchema": null,
+      "expand": []
+    },
+    {
+      "fieldId": 163,
+      "name": "arq.modified.interventions",
+      "element": "modified",
+      "qualifier": "interventions",
+      "description": "Intervenções sofridas. Higienização a seco, Higienização com água, Colagem/refixação, Restauração/reconstituição, Dessalinização, Remoção, Consolidação, Estabilização, Outros ou Não se aplica.",
+      "parentSchema": null,
+      "expand": []
+    },
+    {
+      "fieldId": 164,
+      "name": "arq.modified.packaging",
+      "element": "modified",
+      "qualifier": "packaging",
+      "description": "Acondicionamento. Saco Plástico (Polietileno ou poliéster), Tecido não tecido de polipropileno (TNT), Não tecido de polietileno de alta densidade (Tyvek), Plástico Bolha, Papel, Papel livre de ácido ou ph neutro, Espuma de polietileno, Manta acrílica, Não possui ou Outros.",
+      "parentSchema": null,
+      "expand": []
+    },
+    {
+      "fieldId": 165,
+      "name": "arq.modified.unitilizationmarks",
+      "element": "modified",
+      "qualifier": "unitilizationmarks",
+      "description": "Descrição das inscrições ou marcas de uso.",
+      "parentSchema": null,
+      "expand": []
+    },
+    {
+      "fieldId": 142,
+      "name": "arq.physicalobject.category",
+      "element": "physicalobject",
+      "qualifier": "category",
+      "description": "Categoria em que a peça se enquadra. Artefato, Ecofato, Bioarqueológico, Estrutura/feição, Sedimento/solo, Arqueobotânico, Zooarqueológico ou Outros.",
+      "parentSchema": null,
+      "expand": []
+    },
+    {
+      "fieldId": 133,
+      "name": "arq.project.name",
+      "element": "project",
+      "qualifier": "name",
+      "description": "Nome do projeto.",
+      "parentSchema": null,
+      "expand": []
+    },
+    {
+      "fieldId": 134,
+      "name": "arq.provenance.archaologicalsite",
+      "element": "provenance",
+      "qualifier": "archaologicalsite",
+      "description": "Sitio arqueológico onde o artefato foi encontrado.",
+      "parentSchema": null,
+      "expand": []
+    },
+    {
+      "fieldId": 168,
+      "name": "arq.relation.observations",
+      "element": "relation",
+      "qualifier": "observations",
+      "description": "Observações gerais.",
+      "parentSchema": null,
+      "expand": []
+    },
+    {
+      "fieldId": 143,
+      "name": "arq.spatial.area",
+      "element": "spatial",
+      "qualifier": "area",
+      "description": "Descrição do local onde o artefato foi encontrado.",
+      "parentSchema": null,
+      "expand": []
+    },
+    {
+      "fieldId": 144,
+      "name": "arq.spatial.complement",
+      "element": "spatial",
+      "qualifier": "complement",
+      "description": "Quadrícula, Quadra, Sondagem, Poço Teste ou Estrutura.",
+      "parentSchema": null,
+      "expand": []
+    },
+    {
+      "fieldId": 145,
+      "name": "arq.spatial.level",
+      "element": "spatial",
+      "qualifier": "level",
+      "description": "Nível",
+      "parentSchema": null,
+      "expand": []
+    },
+    {
+      "fieldId": 157,
+      "name": "arq.tableofcontents.amount",
+      "element": "tableofcontents",
+      "qualifier": "amount",
+      "description": "Quantidade do artefato, quantidade de itens.",
+      "parentSchema": null,
+      "expand": []
+    },
+    {
+      "fieldId": 155,
+      "name": "arq.text.miscdocuments",
+      "element": "text",
+      "qualifier": "miscdocuments",
+      "description": "Documentos diversos. Documentação associada ao artefato.",
+      "parentSchema": null,
+      "expand": []
+    },
+    {
+      "fieldId": 161,
+      "name": "arq.type.conservationstate",
+      "element": "type",
+      "qualifier": "conservationstate",
+      "description": "Estado de conservação, condições físicas, grau de deterioração e a necessidade de intervenção. Bom (sem deterioração); Regular (não compromete o todo. Ex.: fissuras, esmaecimento, afloramento de sais, esfarelamento etc.); Ruim (compromete o todo. Ex.: quebradiço, com manchas, alto grau de corrosão) ou Péssimo (perdas irreversíveis).",
+      "parentSchema": null,
+      "expand": []
+    },
+    {
+      "fieldId": 162,
+      "name": "arq.type.conservationstatedescription",
+      "element": "type",
+      "qualifier": "conservationstatedescription",
+      "description": "Descrição textual do estado de conservação do artefato.",
+      "parentSchema": null,
+      "expand": []
+    },
+    {
+      "fieldId": 159,
+      "name": "arq.type.decoration",
+      "element": "type",
+      "qualifier": "decoration",
+      "description": "Tipo de decoração. Alisado, Brunido, Corrugado, Escovado, Ungulado, Incisão, Impressão, Plástica, Pintado, Punção, Aplique, Engobe, Estêncil, Entalhe, Não se aplica ou Outros.",
+      "parentSchema": null,
+      "expand": []
+    },
+    {
+      "fieldId": 160,
+      "name": "arq.type.integrity",
+      "element": "type",
+      "qualifier": "integrity",
+      "description": "Integridade do artefato. Íntegro, Fragmentado ou Reconstituído.",
+      "parentSchema": null,
+      "expand": []
+    },
+    {
+      "fieldId": 158,
+      "name": "arq.type.productiontechnique",
+      "element": "type",
+      "qualifier": "productiontechnique",
+      "description": "Técnicas de Produção. Lascado, Picoteado, Polido, Modelado, Perfurado, Roletado, Torneado, Moldado, Taxidermizado, Tecido, Assoprado, Fundido, Forjado, Indeterminado ou Outros.",
+      "parentSchema": null,
+      "expand": []
+    }
+  ],
+  "fields": [
+    {
+      "fieldId": 140,
+      "name": "arq.collection.name",
+      "element": "collection",
+      "qualifier": "name",
+      "description": "Denominação. Nome dado ao artefato.",
+      "parentSchema": null,
+      "expand": []
+    },
+    {
+      "fieldId": 146,
+      "name": "arq.contributor.researcher",
+      "element": "contributor",
+      "qualifier": "researcher",
+      "description": "Nome do pesquisador responsável.",
+      "parentSchema": null,
+      "expand": []
+    },
+    {
+      "fieldId": 149,
+      "name": "arq.contributor.researcheraddress",
+      "element": "contributor",
+      "qualifier": "researcheraddress",
+      "description": "Endereço do pesquisador.",
+      "parentSchema": null,
+      "expand": []
+    },
+    {
+      "fieldId": 148,
+      "name": "arq.contributor.researcheremail",
+      "element": "contributor",
+      "qualifier": "researcheremail",
+      "description": "Email do pesquisador.",
+      "parentSchema": null,
+      "expand": []
+    },
+    {
+      "fieldId": 147,
+      "name": "arq.contributor.researcherphone",
+      "element": "contributor",
+      "qualifier": "researcherphone",
+      "description": "Telefone do pesquisador responsável.",
+      "parentSchema": null,
+      "expand": []
+    },
+    {
+      "fieldId": 137,
+      "name": "arq.coverage.city",
+      "element": "coverage",
+      "qualifier": "city",
+      "description": "Município onde o sítio está localizado.",
+      "parentSchema": null,
+      "expand": []
+    },
+    {
+      "fieldId": 136,
+      "name": "arq.coverage.geographicregion",
+      "element": "coverage",
+      "qualifier": "geographicregion",
+      "description": "Região geográfica onde o sítio se encontra.",
+      "parentSchema": null,
+      "expand": []
+    },
+    {
+      "fieldId": 138,
+      "name": "arq.coverage.state",
+      "element": "coverage",
+      "qualifier": "state",
+      "description": "Estado onde está localizo o município.",
+      "parentSchema": null,
+      "expand": []
+    },
+    {
+      "fieldId": 150,
+      "name": "arq.date.addedtocollection",
+      "element": "date",
+      "qualifier": "addedtocollection",
+      "description": "Data de incorporação no acervo.",
+      "parentSchema": null,
+      "expand": []
+    },
+    {
+      "fieldId": 141,
+      "name": "arq.description",
+      "element": "description",
+      "qualifier": null,
+      "description": "Descrição textual do artefato.",
+      "parentSchema": null,
+      "expand": []
+    },
+    {
+      "fieldId": 166,
+      "name": "arq.format.measure",
+      "element": "format",
+      "qualifier": "measure",
+      "description": "Medidas. Largura, comprimento, altura, diâmetro, profundidade.",
+      "parentSchema": null,
+      "expand": []
+    },
+    {
+      "fieldId": 167,
+      "name": "arq.format.weight",
+      "element": "format",
+      "qualifier": "weight",
+      "description": "Peso.",
+      "parentSchema": null,
+      "expand": []
+    },
+    {
+      "fieldId": 135,
+      "name": "arq.identifier.processnumber",
+      "element": "identifier",
+      "qualifier": "processnumber",
+      "description": "Número do processo.",
+      "parentSchema": null,
+      "expand": []
+    },
+    {
+      "fieldId": 139,
+      "name": "arq.identifier.recordnumber",
+      "element": "identifier",
+      "qualifier": "recordnumber",
+      "description": "Número do registro.",
+      "parentSchema": null,
+      "expand": []
+    },
+    {
+      "fieldId": 154,
+      "name": "arq.image",
+      "element": "image",
+      "qualifier": null,
+      "description": "Fotos do artefato.",
+      "parentSchema": null,
+      "expand": []
+    },
+    {
+      "fieldId": 151,
+      "name": "arq.location.boxid",
+      "element": "location",
+      "qualifier": "boxid",
+      "description": "Identificação da caixa onde se encontra o artefato.",
+      "parentSchema": null,
+      "expand": []
+    },
+    {
+      "fieldId": 153,
+      "name": "arq.location.shelfid",
+      "element": "location",
+      "qualifier": "shelfid",
+      "description": "Identificação da prateleira onde está o artefato.",
+      "parentSchema": null,
+      "expand": []
+    },
+    {
+      "fieldId": 152,
+      "name": "arq.location.shelflevel",
+      "element": "location",
+      "qualifier": "shelflevel",
+      "description": "Identificação de qual estante da prateleira está a caixa do artefato.",
+      "parentSchema": null,
+      "expand": []
+    },
+    {
+      "fieldId": 156,
+      "name": "arq.medium.type",
+      "element": "medium",
+      "qualifier": "type",
+      "description": "Materiais que compõem o artefato. Borracha, Carvão, Cerâmica, Faiança, Porcelana, Couro, Fóssil, Lítico, Madeira, Malacológico, Metal, Osso, Papel, Sedimento, Plástico, Têxtil, Flora, Fauna, Vidro, Indeterminado ou Outros.",
+      "parentSchema": null,
+      "expand": []
+    },
+    {
+      "fieldId": 163,
+      "name": "arq.modified.interventions",
+      "element": "modified",
+      "qualifier": "interventions",
+      "description": "Intervenções sofridas. Higienização a seco, Higienização com água, Colagem/refixação, Restauração/reconstituição, Dessalinização, Remoção, Consolidação, Estabilização, Outros ou Não se aplica.",
+      "parentSchema": null,
+      "expand": []
+    },
+    {
+      "fieldId": 164,
+      "name": "arq.modified.packaging",
+      "element": "modified",
+      "qualifier": "packaging",
+      "description": "Acondicionamento. Saco Plástico (Polietileno ou poliéster), Tecido não tecido de polipropileno (TNT), Não tecido de polietileno de alta densidade (Tyvek), Plástico Bolha, Papel, Papel livre de ácido ou ph neutro, Espuma de polietileno, Manta acrílica, Não possui ou Outros.",
+      "parentSchema": null,
+      "expand": []
+    },
+    {
+      "fieldId": 165,
+      "name": "arq.modified.unitilizationmarks",
+      "element": "modified",
+      "qualifier": "unitilizationmarks",
+      "description": "Descrição das inscrições ou marcas de uso.",
+      "parentSchema": null,
+      "expand": []
+    },
+    {
+      "fieldId": 142,
+      "name": "arq.physicalobject.category",
+      "element": "physicalobject",
+      "qualifier": "category",
+      "description": "Categoria em que a peça se enquadra. Artefato, Ecofato, Bioarqueológico, Estrutura/feição, Sedimento/solo, Arqueobotânico, Zooarqueológico ou Outros.",
+      "parentSchema": null,
+      "expand": []
+    },
+    {
+      "fieldId": 133,
+      "name": "arq.project.name",
+      "element": "project",
+      "qualifier": "name",
+      "description": "Nome do projeto.",
+      "parentSchema": null,
+      "expand": []
+    },
+    {
+      "fieldId": 134,
+      "name": "arq.provenance.archaologicalsite",
+      "element": "provenance",
+      "qualifier": "archaologicalsite",
+      "description": "Sitio arqueológico onde o artefato foi encontrado.",
+      "parentSchema": null,
+      "expand": []
+    },
+    {
+      "fieldId": 168,
+      "name": "arq.relation.observations",
+      "element": "relation",
+      "qualifier": "observations",
+      "description": "Observações gerais.",
+      "parentSchema": null,
+      "expand": []
+    },
+    {
+      "fieldId": 143,
+      "name": "arq.spatial.area",
+      "element": "spatial",
+      "qualifier": "area",
+      "description": "Descrição do local onde o artefato foi encontrado.",
+      "parentSchema": null,
+      "expand": []
+    },
+    {
+      "fieldId": 144,
+      "name": "arq.spatial.complement",
+      "element": "spatial",
+      "qualifier": "complement",
+      "description": "Quadrícula, Quadra, Sondagem, Poço Teste ou Estrutura.",
+      "parentSchema": null,
+      "expand": []
+    },
+    {
+      "fieldId": 145,
+      "name": "arq.spatial.level",
+      "element": "spatial",
+      "qualifier": "level",
+      "description": "Nível",
+      "parentSchema": null,
+      "expand": []
+    },
+    {
+      "fieldId": 157,
+      "name": "arq.tableofcontents.amount",
+      "element": "tableofcontents",
+      "qualifier": "amount",
+      "description": "Quantidade do artefato, quantidade de itens.",
+      "parentSchema": null,
+      "expand": []
+    },
+    {
+      "fieldId": 155,
+      "name": "arq.text.miscdocuments",
+      "element": "text",
+      "qualifier": "miscdocuments",
+      "description": "Documentos diversos. Documentação associada ao artefato.",
+      "parentSchema": null,
+      "expand": []
+    },
+    {
+      "fieldId": 161,
+      "name": "arq.type.conservationstate",
+      "element": "type",
+      "qualifier": "conservationstate",
+      "description": "Estado de conservação, condições físicas, grau de deterioração e a necessidade de intervenção. Bom (sem deterioração); Regular (não compromete o todo. Ex.: fissuras, esmaecimento, afloramento de sais, esfarelamento etc.); Ruim (compromete o todo. Ex.: quebradiço, com manchas, alto grau de corrosão) ou Péssimo (perdas irreversíveis).",
+      "parentSchema": null,
+      "expand": []
+    },
+    {
+      "fieldId": 162,
+      "name": "arq.type.conservationstatedescription",
+      "element": "type",
+      "qualifier": "conservationstatedescription",
+      "description": "Descrição textual do estado de conservação do artefato.",
+      "parentSchema": null,
+      "expand": []
+    },
+    {
+      "fieldId": 159,
+      "name": "arq.type.decoration",
+      "element": "type",
+      "qualifier": "decoration",
+      "description": "Tipo de decoração. Alisado, Brunido, Corrugado, Escovado, Ungulado, Incisão, Impressão, Plástica, Pintado, Punção, Aplique, Engobe, Estêncil, Entalhe, Não se aplica ou Outros.",
+      "parentSchema": null,
+      "expand": []
+    },
+    {
+      "fieldId": 160,
+      "name": "arq.type.integrity",
+      "element": "type",
+      "qualifier": "integrity",
+      "description": "Integridade do artefato. Íntegro, Fragmentado ou Reconstituído.",
+      "parentSchema": null,
+      "expand": []
+    },
+    {
+      "fieldId": 158,
+      "name": "arq.type.productiontechnique",
+      "element": "type",
+      "qualifier": "productiontechnique",
+      "description": "Técnicas de Produção. Lascado, Picoteado, Polido, Modelado, Perfurado, Roletado, Torneado, Moldado, Taxidermizado, Tecido, Assoprado, Fundido, Forjado, Indeterminado ou Outros.",
+      "parentSchema": null,
+      "expand": []
+    }
+  ]
+}
