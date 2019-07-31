@@ -65,7 +65,7 @@
       "name": "arq.coverage.geographicregion",
       "element": "coverage",
       "qualifier": "geographicregion",
-      "description": "Região geográfica onde o sítio se encontra.",
+      "description": "Definir a macrorregião de origem do material. Ex: Vale do Jequitinhonha. ",
       "parentSchema": null,
       "expand": []
     },
@@ -74,7 +74,7 @@
       "name": "arq.coverage.state",
       "element": "coverage",
       "qualifier": "state",
-      "description": "Estado onde está localizo o município.",
+      "description": "Estado aonde foi encontrado o material arqueológico.",
       "parentSchema": null,
       "expand": []
     },
@@ -119,7 +119,7 @@
       "name": "arq.identifier.processnumber",
       "element": "identifier",
       "qualifier": "processnumber",
-      "description": "Número do processo.",
+      "description": "Número do processo junto ao IPHAN.",
       "parentSchema": null,
       "expand": []
     },
@@ -218,16 +218,16 @@
       "name": "arq.project.name",
       "element": "project",
       "qualifier": "name",
-      "description": "Nome do projeto.",
+      "description": "Nome do projeto registrado junto ao IPHAN.",
       "parentSchema": null,
       "expand": []
     },
     {
       "fieldId": 134,
-      "name": "arq.provenance.archaologicalsite",
+      "name": "arq.provenance.archaelogicalsite",
       "element": "provenance",
-      "qualifier": "archaologicalsite",
-      "description": "Sitio arqueológico onde o artefato foi encontrado.",
+      "qualifier": "archaelogicalsite",
+      "description": "Nome do(s) sítios arqueológico(s) de proveniência do material.",
       "parentSchema": null,
       "expand": []
     },
@@ -391,7 +391,7 @@
       "name": "arq.coverage.geographicregion",
       "element": "coverage",
       "qualifier": "geographicregion",
-      "description": "Região geográfica onde o sítio se encontra.",
+      "description": "Definir a macrorregião de origem do material. Ex: Vale do Jequitinhonha. ",
       "parentSchema": null,
       "expand": []
     },
@@ -400,7 +400,7 @@
       "name": "arq.coverage.state",
       "element": "coverage",
       "qualifier": "state",
-      "description": "Estado onde está localizo o município.",
+      "description": "Estado aonde foi encontrado o material arqueológico.",
       "parentSchema": null,
       "expand": []
     },
@@ -445,7 +445,7 @@
       "name": "arq.identifier.processnumber",
       "element": "identifier",
       "qualifier": "processnumber",
-      "description": "Número do processo.",
+      "description": "Número do processo junto ao IPHAN.",
       "parentSchema": null,
       "expand": []
     },
@@ -544,16 +544,16 @@
       "name": "arq.project.name",
       "element": "project",
       "qualifier": "name",
-      "description": "Nome do projeto.",
+      "description": "Nome do projeto registrado junto ao IPHAN.",
       "parentSchema": null,
       "expand": []
     },
     {
       "fieldId": 134,
-      "name": "arq.provenance.archaologicalsite",
+      "name": "arq.provenance.archaelogicalsite",
       "element": "provenance",
-      "qualifier": "archaologicalsite",
-      "description": "Sitio arqueológico onde o artefato foi encontrado.",
+      "qualifier": "archaelogicalsite",
+      "description": "Nome do(s) sítios arqueológico(s) de proveniência do material.",
       "parentSchema": null,
       "expand": []
     },
