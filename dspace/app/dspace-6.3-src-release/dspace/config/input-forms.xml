@@ -66,7 +66,7 @@
          <dc-schema>arq</dc-schema>
          <dc-element>project</dc-element>
          <dc-qualifier>name</dc-qualifier>
-         <label>Project Name</label>
+         <label>Nome do Projeto</label>
          <input-type>onebox</input-type>
          <hint>Entre com o nome do projeto que foi registrado junto ao IPHAN.</hint>
          <required>O nome do projeto é obrigatório.</required>
@@ -168,7 +168,115 @@
          <hint>Marcar qual a categoria que o artefato pertence. </hint>
          <required>Informar a categoria é obrigatório.</required>
        </field>
+
+       <field>
+         <dc-schema>arq</dc-schema>
+         <dc-element>spatial</dc-element>
+         <dc-qualifier>area</dc-qualifier>
+         <label>Descrição da área onde o material foi encontrado</label>
+         <input-type>textarea</input-type>
+         <hint>Descreva a area onde o material foi encontrado</hint>
+         <required>É obrigatório informar a área descrição da área.</required>
+       </field>
+
+       <field>
+         <dc-schema>arq</dc-schema>
+         <dc-element>spatial</dc-element>
+         <repeatable>true</repeatable>
+         <label>Identificação complementar da área</label>
+         <input-type value-pairs-name="area">qualdrop_value</input-type>
+         <hint>Indicar a área na qual o material foi encontrado.</hint>
+         <required>É obrigatório informar a área.</required>
+       </field>
+
+       <field>
+         <dc-schema>arq</dc-schema>
+         <dc-element>spatial</dc-element>
+         <dc-qualifier>level</dc-qualifier>
+         <label>Profundidade em que o material foi encontrado</label>
+         <input-type>onebox</input-type>
+         <hint> Indique a profundidade em que o material foi encontrado.</hint>
+       </field>
+
      </page>
+
+<!--     Identificação do pesquisador e receptor do material-->
+     <page number="3">
+       <field>
+         <dc-schema>arq</dc-schema>
+         <dc-element>contributor</dc-element>
+         <dc-qualifier>researchername</dc-qualifier>
+         <label>Pesquisador </label>
+         <input-type>onebox</input-type>
+         <hint>Nome do pesquisador responsável.</hint>
+         <required>É obrigatório informar o nome do pesquisador.</required>
+       </field>
+
+       <field>
+         <dc-schema>arq</dc-schema>
+         <dc-element>contributor</dc-element>
+         <dc-qualifier>researcheremail</dc-qualifier>
+         <label>E-mail do pesquisador </label>
+         <input-type>onebox</input-type>
+         <hint></hint>
+         <required>É obrigatório informar o email do pesquisador.</required>
+       </field>
+
+       <field>
+         <dc-schema>arq</dc-schema>
+         <dc-element>contributor</dc-element>
+         <dc-qualifier>researcherphone</dc-qualifier>
+         <label>Telefone do pesquisador </label>
+         <input-type>onebox</input-type>
+         <hint></hint>
+       </field>
+     </page>
+
+<!-- Dados sobre a reserva técnica-->
+     <page number="4">
+
+       <field>
+         <dc-schema>arq</dc-schema>
+         <dc-element>location</dc-element>
+         <dc-qualifier>boxid</dc-qualifier>
+         <label> Identificação da caixa </label>
+         <input-type>onebox</input-type>
+         <hint> Código de identificação da caixa onde está o material</hint>
+         <required>É obrigatório informar o código de identificação da caixa.</required>
+       </field>
+
+       <field>
+         <dc-schema>arq</dc-schema>
+         <dc-element>location</dc-element>
+         <dc-qualifier>shelflevel</dc-qualifier>
+         <label> Nível na estante </label>
+         <input-type>onebox</input-type>
+         <hint> Identifique em qual andar da estante está a caixa</hint>
+         <required>É obrigatório informar o andar da estante.</required>
+       </field>
+
+       <field>
+         <dc-schema>arq</dc-schema>
+         <dc-element>location</dc-element>
+         <dc-qualifier>shelfid</dc-qualifier>
+         <label> Identificação da estante </label>
+         <input-type>onebox</input-type>
+         <hint> Código de identificação da estante</hint>
+         <required>É obrigatório informar o código de identificação da estante.</required>
+       </field>
+
+     </page>
+
+<!--     Descrição da características do material e estado de conservação-->
+<!--     <page number="5">-->
+<!--       <field>-->
+<!--         <dc-schema></dc-schema>-->
+<!--         <dc-element></dc-element>-->
+<!--         <label></label>-->
+<!--         <input-type></input-type>-->
+<!--         <hint></hint>-->
+<!--       </field>-->
+<!--     </page>-->
    </form>
 
    <form name="traditional">
@@ -577,6 +685,41 @@
        <displayed-value>Outros</displayed-value>
        <stored-value>others</stored-value>
      </pair>
+   </value-pairs>
+
+
+   <!--   arq metadata-->
+   <value-pairs value-pairs-name="area" dc-term=" spatial">
+     <pair>
+       <displayed-value>Quadrícula</displayed-value>
+       <stored-value>grid</stored-value>
+     </pair>
+
+     <pair>
+       <displayed-value>Quadra</displayed-value>
+       <stored-value>block</stored-value>
+     </pair>
+
+     <pair>
+       <displayed-value>Sondagem</displayed-value>
+       <stored-value>drilling</stored-value>
+     </pair>
+
+     <pair>
+       <displayed-value>Poço teste</displayed-value>
+       <stored-value>testpit</stored-value>
+     </pair>
+
+     <pair>
+       <displayed-value>Estrutura</displayed-value>
+       <stored-value>structure</stored-value>
+     </pair>
+
+     <pair>
+       <displayed-value>Outra</displayed-value>
+       <stored-value>other</stored-value>
+     </pair>
+
    </value-pairs>
 
 
