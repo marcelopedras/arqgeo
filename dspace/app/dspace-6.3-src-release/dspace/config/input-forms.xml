@@ -40,7 +40,29 @@
    <form name="arq">
 <!--     Procedência e Localização Atual-->
      <page number="1">
+       <!-- Campo obrigatório no dpace-->
        <field>
+         <dc-schema>dc</dc-schema>
+         <dc-element>title</dc-element>
+         <label>Denominação do Material</label>
+         <input-type>onebox</input-type>
+         <hint>Denominação do material. Ex: fragmento de ponta de flecha.</hint>
+         <required>É obrigatório informar a denominação do material.</required>
+       </field>
+
+       <!-- Campo obrigatório no dpace-->
+       <field>
+         <dc-schema>dc</dc-schema>
+         <dc-element>date</dc-element>
+         <dc-qualifier>issued</dc-qualifier>
+         <repeatable>false</repeatable>
+         <label>Data da entrada no acervo</label>
+         <input-type>date</input-type>
+         <hint>Insira a data de entrada do material no acervo. Dia e mês podem ficar em branco se necessário.</hint>
+         <required>Inserir pelo menos o ano é obrigatório.</required>
+       </field>
+       <field>
+
          <dc-schema>arq</dc-schema>
          <dc-element>project</dc-element>
          <dc-qualifier>name</dc-qualifier>
@@ -104,25 +126,27 @@
 
 <!--     Dados Gerais-->
      <page number="2">
+<!--       Código de identificação de cada peça-->
        <field>
          <dc-schema>arq</dc-schema>
          <dc-element>identifier</dc-element>
          <dc-qualifier>registernumber</dc-qualifier>
+         <repeatable>true</repeatable>
          <label>Número de registro</label>
          <input-type>onebox</input-type>
          <hint>Número de registro inserido nas peças arqueológicas</hint>
          <required>É obrigatório o registro.</required>
        </field>
 
-       <field>
-         <dc-schema>arq</dc-schema>
-         <dc-element>collection</dc-element>
-         <dc-qualifier>denomination</dc-qualifier>
-         <label>Denominação</label>
-         <input-type>onebox</input-type>
-         <hint>Denominação do material. Ex: fragmento de ponta de flecha.</hint>
-         <required>É obrigatório informar a denominação.</required>
-       </field>
+<!--       <field>-->
+<!--         <dc-schema>arq</dc-schema>-->
+<!--         <dc-element>collection</dc-element>-->
+<!--         <dc-qualifier>denomination</dc-qualifier>-->
+<!--         <label>Denominação</label>-->
+<!--         <input-type>onebox</input-type>-->
+<!--         <hint>Denominação do material. Ex: fragmento de ponta de flecha.</hint>-->
+<!--         <required>É obrigatório informar a denominação.</required>-->
+<!--       </field>-->
 
        <field>
          <dc-schema>arq</dc-schema>
@@ -132,6 +156,17 @@
          <input-type>textarea</input-type>
          <hint>Descrição do rica em detalhes do artefato. Ex: Dois cravos inteiros produzidos em ferro. </hint>
          <required>É obrigatório informar a descrição.</required>
+       </field>
+
+       <field>
+         <dc-schema>arq</dc-schema>
+         <dc-element>physicalobject</dc-element>
+         <dc-qualifier>category</dc-qualifier>
+         <repeatable>false</repeatable>
+         <label>Categoria do Material</label>
+         <input-type value-pairs-name="category">list</input-type>
+         <hint>Marcar qual a categoria que o artefato pertence. </hint>
+         <required>Informar a categoria é obrigatório.</required>
        </field>
      </page>
    </form>
@@ -500,6 +535,51 @@
        <stored-value>other</stored-value>
      </pair>
    </value-pairs>
+
+<!--   arq metadata-->
+   <value-pairs value-pairs-name="category" dc-term=" physicalobject">
+     <pair>
+       <displayed-value>Artefato</displayed-value>
+       <stored-value>artifact</stored-value>
+     </pair>
+
+     <pair>
+       <displayed-value>Ecofato</displayed-value>
+       <stored-value>ecofact</stored-value>
+     </pair>
+
+     <pair>
+       <displayed-value>Bioarqueológico</displayed-value>
+       <stored-value>bioarchaeological</stored-value>
+     </pair>
+
+     <pair>
+       <displayed-value>Estrutura/feição</displayed-value>
+       <stored-value>partofstructure</stored-value>
+     </pair>
+
+     <pair>
+       <displayed-value>Sedimento/solo</displayed-value>
+       <stored-value>sediment</stored-value>
+     </pair>
+
+     <pair>
+       <displayed-value>Arqueobotânico</displayed-value>
+       <stored-value>archaeobotanical</stored-value>
+     </pair>
+
+     <pair>
+       <displayed-value>Zooarqueológico</displayed-value>
+       <stored-value>zooarchaeological</stored-value>
+     </pair>
+
+     <pair>
+       <displayed-value>Outros</displayed-value>
+       <stored-value>others</stored-value>
+     </pair>
+   </value-pairs>
+
+
 
  </form-value-pairs>
 
