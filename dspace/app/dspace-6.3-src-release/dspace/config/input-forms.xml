@@ -268,15 +268,40 @@
      </page>
 
 <!--     Descrição da características do material e estado de conservação-->
-<!--     <page number="5">-->
-<!--       <field>-->
-<!--         <dc-schema></dc-schema>-->
-<!--         <dc-element></dc-element>-->
-<!--         <label></label>-->
-<!--         <input-type></input-type>-->
-<!--         <hint></hint>-->
-<!--       </field>-->
-<!--     </page>-->
+     <page number="5">
+       <field>
+         <dc-schema>arq</dc-schema>
+         <dc-element>medium</dc-element>
+         <dc-qualifier>materialtype</dc-qualifier>
+         <repeatable>true</repeatable>
+         <label>Tipo de material</label>
+         <input-type value-pairs-name="materialtype">list</input-type>
+         <hint>Marque os materiais que compõem o artefato.</hint>
+         <required></required>
+       </field>
+
+       <field>
+         <dc-schema>arq</dc-schema>
+         <dc-element>tableofcontents</dc-element>
+         <dc-qualifier>quantity</dc-qualifier>
+         <label> Quantidade de itens </label>
+         <input-type>onebox</input-type>
+         <hint> Entre com a quantidade de peças que compôem o artefato</hint>
+         <required></required>
+       </field>
+
+       <field>
+         <dc-schema>arq</dc-schema>
+         <dc-element>type</dc-element>
+         <dc-qualifier>productiontechnique</dc-qualifier>
+         <repeatable>true</repeatable>
+         <label>Técnica de Producação</label>
+         <input-type value-pairs-name="productiontechnique">list</input-type>
+         <hint>Marque os técnicas de produção utilizadas.</hint>
+         <required></required>
+       </field>
+
+     </page>
    </form>
 
    <form name="traditional">
@@ -688,21 +713,21 @@
    </value-pairs>
 
 
-   <!--   arq metadata-->
+   <!--   arq metadata - area-->
    <value-pairs value-pairs-name="area" dc-term=" spatial">
      <pair>
        <displayed-value>Quadrícula</displayed-value>
-       <stored-value>grid</stored-value>
+       <stored-value>square</stored-value>
      </pair>
 
      <pair>
        <displayed-value>Quadra</displayed-value>
-       <stored-value>block</stored-value>
+       <stored-value>quatrain</stored-value>
      </pair>
 
      <pair>
        <displayed-value>Sondagem</displayed-value>
-       <stored-value>drilling</stored-value>
+       <stored-value>survey</stored-value>
      </pair>
 
      <pair>
@@ -712,11 +737,200 @@
 
      <pair>
        <displayed-value>Estrutura</displayed-value>
-       <stored-value>structure</stored-value>
+       <stored-value>partofstructure</stored-value>
      </pair>
 
      <pair>
        <displayed-value>Outra</displayed-value>
+       <stored-value>other</stored-value>
+     </pair>
+
+   </value-pairs>
+
+<!--   arq metadata - Tipo de material-->
+
+   <value-pairs value-pairs-name="materialtype" dc-term="medium">
+     <pair>
+       <displayed-value>Borracha</displayed-value>
+       <stored-value>rubber</stored-value>
+     </pair>
+
+     <pair>
+       <displayed-value>Carvão</displayed-value>
+       <stored-value>carbon</stored-value>
+     </pair>
+
+     <pair>
+       <displayed-value>Cerâmica</displayed-value>
+       <stored-value>ceramic</stored-value>
+     </pair>
+
+     <pair>
+       <displayed-value>Faiança</displayed-value>
+       <stored-value>earthenware</stored-value>
+     </pair>
+
+     <pair>
+       <displayed-value>Porcelana</displayed-value>
+       <stored-value>porcelain</stored-value>
+     </pair>
+
+     <pair>
+       <displayed-value>Couro</displayed-value>
+       <stored-value>leather</stored-value>
+     </pair>
+
+     <pair>
+       <displayed-value>Fóssil</displayed-value>
+       <stored-value>fossil</stored-value>
+     </pair>
+
+     <pair>
+       <displayed-value>Lítico</displayed-value>
+       <stored-value>lithic</stored-value>
+     </pair>
+
+     <pair>
+       <displayed-value>Madeira</displayed-value>
+       <stored-value>wood</stored-value>
+     </pair>
+
+     <pair>
+       <displayed-value>Malacológico</displayed-value>
+       <stored-value>malacological</stored-value>
+     </pair>
+
+     <pair>
+       <displayed-value>Metal</displayed-value>
+       <stored-value>metal</stored-value>
+     </pair>
+
+     <pair>
+       <displayed-value>Osso</displayed-value>
+       <stored-value>bone</stored-value>
+     </pair>
+
+     <pair>
+       <displayed-value>Papel</displayed-value>
+       <stored-value>paper</stored-value>
+     </pair>
+
+     <pair>
+       <displayed-value>Sedimento</displayed-value>
+       <stored-value>sediment</stored-value>
+     </pair>
+
+     <pair>
+       <displayed-value>Plástico</displayed-value>
+       <stored-value>plastic</stored-value>
+     </pair>
+
+     <pair>
+       <displayed-value>Têxtil</displayed-value>
+       <stored-value>fabric</stored-value>
+     </pair>
+
+     <pair>
+       <displayed-value>Flora</displayed-value>
+       <stored-value>flora</stored-value>
+     </pair>
+
+     <pair>
+       <displayed-value>Fauna</displayed-value>
+       <stored-value>fauna</stored-value>
+     </pair>
+
+     <pair>
+       <displayed-value>Vidro</displayed-value>
+       <stored-value>glass</stored-value>
+     </pair>
+
+     <pair>
+       <displayed-value>Indeterminado</displayed-value>
+       <stored-value>inderterminated</stored-value>
+     </pair>
+
+     <pair>
+       <displayed-value>Outros</displayed-value>
+       <stored-value>others</stored-value>
+     </pair>
+
+   </value-pairs>
+
+
+   <value-pairs value-pairs-name="productiontechnique" dc-term="type">
+     <pair>
+       <displayed-value>Lascado</displayed-value>
+       <stored-value>flake</stored-value>
+     </pair>
+
+     <pair>
+       <displayed-value>shredding</displayed-value>
+       <stored-value>Picoteado</stored-value>
+     </pair>
+
+     <pair>
+       <displayed-value>polish</displayed-value>
+       <stored-value>Polido</stored-value>
+     </pair>
+
+     <pair>
+       <displayed-value>modeled</displayed-value>
+       <stored-value>Modelado</stored-value>
+     </pair>
+
+     <pair>
+       <displayed-value>perfuration</displayed-value>
+       <stored-value>Perfurado</stored-value>
+     </pair>
+
+     <pair>
+       <displayed-value>rolet</displayed-value>
+       <stored-value>Roletado</stored-value>
+     </pair>
+
+     <pair>
+       <displayed-value>turning</displayed-value>
+       <stored-value>Torneado</stored-value>
+     </pair>
+
+     <pair>
+       <displayed-value>Modelado</displayed-value>
+       <stored-value>molded</stored-value>
+     </pair>
+
+     <pair>
+       <displayed-value>taxidermy</displayed-value>
+       <stored-value>Taxidermizado</stored-value>
+     </pair>
+
+     <pair>
+       <displayed-value>Tecido</displayed-value>
+       <stored-value>woven</stored-value>
+     </pair>
+
+     <pair>
+       <displayed-value>blowed</displayed-value>
+       <stored-value>Assoprado</stored-value>
+     </pair>
+
+     <pair>
+       <displayed-value>cast</displayed-value>
+       <stored-value>Fundido</stored-value>
+     </pair>
+
+     <pair>
+       <displayed-value>forged</displayed-value>
+       <stored-value>Forjado</stored-value>
+     </pair>
+
+     <pair>
+       <displayed-value>Indeterminado</displayed-value>
+       <stored-value>inderteminated</stored-value>
+     </pair>
+
+     <pair>
+       <displayed-value>Outro</displayed-value>
        <stored-value>other</stored-value>
      </pair>
 

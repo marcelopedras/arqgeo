@@ -62,7 +62,8 @@ ADD ./dspace/app/dspace-6.3-src-release dspace
 # Add .m2 cache to project
 COPY --from=cache /root/.m2 /root/.m2
 
-RUN cd dspace && mvn clean package
+#RUN cd dspace && mvn clean package -P '!dspace-lni,!dspace-oai,!dspace-sword,!dspace-swordv2,!dspace-xmlui'
+RUN cd dspace && mvn package -P '!dspace-lni,!dspace-oai,!dspace-sword,!dspace-swordv2,!dspace-xmlui'
 RUN cd dspace/dspace/target/dspace-installer \
     && ant init_installation init_configs install_code copy_webapps
 RUN rm -fr "$CATALINA_HOME/webapps" && mv -f /dspace/webapps "$CATALINA_HOME" \
