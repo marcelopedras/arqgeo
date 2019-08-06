@@ -316,7 +316,16 @@ public class DCInputsReader
                                 // process each page definition
                                 if (npg.getNodeName().equals("page"))
                                 {
-                                        String pgNum = getAttribute(npg, "number");
+                                         String pgNum = getAttribute(npg, "number");
+
+                                         // TODO - Verificar como usar o atributo title em input-forms.xml
+
+//                                       String pgTitle = getAttribute(npg, "title");
+//
+//                                       System.out.println("------------------ Title --------------------");
+//                                       System.out.println(pgTitle);
+//                                       System.out.println("------------------ Title --------------------");
+
                                         if (pgNum == null)
                                         {
                                                 throw new SAXException("Form " + formName + " has no identified pages");

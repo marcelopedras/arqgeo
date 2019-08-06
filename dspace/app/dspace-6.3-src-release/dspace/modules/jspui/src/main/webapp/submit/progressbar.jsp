@@ -17,6 +17,11 @@
 
 <%@ page contentType="text/html;charset=UTF-8" %>
 
+<%-- Marcelo - Adicionado para ter acesso a definição do formulário--%>
+<%@ page import="org.dspace.submit.step.DescribeStep" %>
+<%@ page import="org.dspace.app.util.DCInputsReader" %>
+<%@ page import="org.apache.commons.lang3.builder.ReflectionToStringBuilder" %>
+
 <%@ page import="java.util.HashMap" %>
 <%@ page import="java.util.Set" %>
 <%@ page import="java.util.Iterator" %>
@@ -32,6 +37,7 @@
 <%@ page import="org.dspace.app.util.SubmissionStepConfig" %>
 <%@ page import="javax.servlet.jsp.jstl.fmt.LocaleSupport" %>
 <%@ page import="org.apache.log4j.Logger" %>
+
 
 <%@ taglib uri="http://www.dspace.org/dspace-tags.tld" prefix="dspace" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
@@ -73,8 +79,12 @@
     //get progress bar info, used to build progress bar
 	HashMap progressBarInfo = (HashMap) subInfo.getProgressBarInfo();
 //	TODO - Customizar para exibir os nomes das partes do formulário.
-	log.info("Teste Marcelo");
-    log.info(progressBarInfo);
+//	log.info("############ Teste Marcelo");
+//    DCInputsReader inputReader =  DescribeStep.getInputsReader();
+//    log.info(ReflectionToStringBuilder.toString(inputReader));
+//    log.info("########### Fim Teste Marcelo");
+
+
 
     if((progressBarInfo!=null) && (progressBarInfo.keySet()!=null))
     {

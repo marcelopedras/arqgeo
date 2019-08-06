@@ -842,6 +842,12 @@
     <dependencyManagement>
         <dependencies>
             <!-- DSpace core and endorsed Addons -->
+            <!-- Para exibir o conteúdo de objetos no log    -->
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-lang3</artifactId>
+                <version>3.9</version>
+            </dependency>
             <dependency>
                 <groupId>org.dspace</groupId>
                 <artifactId>dspace-api</artifactId>

@@ -39,7 +39,7 @@
 
    <form name="arq">
 <!--     Procedência e Localização Atual-->
-     <page number="1">
+     <page number="1" title="Seção 1" >
        <!-- Campo obrigatório no dpace-->
        <field>
          <dc-schema>dc</dc-schema>
@@ -125,7 +125,7 @@
      </page>
 
 <!--     Dados Gerais-->
-     <page number="2">
+     <page number="2" title="Seção 2" >
 <!--       Código de identificação de cada peça-->
        <field>
          <dc-schema>arq</dc-schema>
@@ -201,7 +201,7 @@
      </page>
 
 <!--     Identificação do pesquisador e receptor do material-->
-     <page number="3">
+     <page number="3" title="Seção 3" >
        <field>
          <dc-schema>arq</dc-schema>
          <dc-element>contributor</dc-element>
@@ -233,7 +233,7 @@
      </page>
 
 <!-- Dados sobre a reserva técnica-->
-     <page number="4">
+     <page number="4" title="Seção 4" >
 
        <field>
          <dc-schema>arq</dc-schema>
@@ -268,7 +268,7 @@
      </page>
 
 <!--     Descrição da características do material e estado de conservação-->
-     <page number="5">
+     <page number="5" title="Seção 5" >
        <field>
          <dc-schema>arq</dc-schema>
          <dc-element>medium</dc-element>
