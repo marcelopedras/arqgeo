@@ -22,10 +22,7 @@ services:
       - POSTGRES_SCHEMA=dspace
       - POSTGRES_USER=dspace
       - POSTGRES_PASSWORD=password
-    volumes:
-      - ./dspace/app/dspace-6.3-src-release:/tmp/dspace
-      - ./cache/.m2:/root/.m2
-#      - ./cache/dspace_home:/dspace
+
     command: start-dspace
 
 volumes:

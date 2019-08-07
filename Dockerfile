@@ -1,5 +1,5 @@
 FROM maven:3.6.1-jdk-8-alpine as cache
-COPY ./dspace/app/dspace-6.3-src-release /usr/src/dspace
+COPY ./dspace/app/dspace6 /usr/src/dspace
 WORKDIR /usr/src/dspace
 RUN mvn dependency:resolve
 
@@ -57,7 +57,7 @@ COPY ./dspace/config/setenv.sh "$CATALINA_HOME"/bin
 COPY ./dspace/config/server.xml "$CATALINA_HOME"/conf
 
 # Copy source to /tmp/dspace
-ADD ./dspace/app/dspace-6.3-src-release dspace
+ADD ./dspace/app/dspace6 dspace
 
 # Add .m2 cache to project
 COPY --from=cache /root/.m2 /root/.m2
