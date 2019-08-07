@@ -78,13 +78,9 @@
 <%    
     //get progress bar info, used to build progress bar
 	HashMap progressBarInfo = (HashMap) subInfo.getProgressBarInfo();
-//	TODO - Customizar para exibir os nomes das partes do formulário.
-//	log.info("############ Teste Marcelo");
-//    DCInputsReader inputReader =  DescribeStep.getInputsReader();
-//    log.info(ReflectionToStringBuilder.toString(inputReader));
-//    log.info("########### Fim Teste Marcelo");
 
-
+//	Marcelo custom - Permits access input-forms.xml definition.
+    DCInputsReader inputReader =  DescribeStep.getInputsReader();
 
     if((progressBarInfo!=null) && (progressBarInfo.keySet()!=null))
     {
@@ -101,12 +97,20 @@
 		  //get heading from hashmap
 		  String heading = (String) progressBarInfo.get(stepAndPage);
 
+//		  Marcelo custom - backups the heading i18n path.
+		  String headingRaw = heading;
+
 		  //if the heading contains a period (.), then assume
           //it is referencing a key in Messages.properties
           if(heading.indexOf(".") >= 0)
           {
              //prepend the existing key with "jsp." since we are using JSP-UI
              heading = LocaleSupport.getLocalizedMessage(pageContext, "jsp." + heading);
+          }
+
+//          Marcelo custom - Set heading to title defined in input-forms page element.
+          if (headingRaw.equals("submit.progressbar.describe")) {
+              heading = inputReader.getPageTitle(stepAndPage.split("\\.")[1]);
           }
 
 		  //split into stepNum and pageNum
