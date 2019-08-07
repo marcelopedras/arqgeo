@@ -1,0 +1,61 @@
+###Configurações para usar o intellij ultimate
+
+
+### Versão do java
+
+Deve ser a versão 8 do openjdk. Tive problemas usando a 9 para compilar o solr.
+
+
+
+### Configuração do tomcat
+
+A versão deve ser a 9. Usei a 9.0.22.
+Copie  a pasta Catalina para a pasta conf do tomcat.
+Aponte os arquivos jspui, rest e solr xml para a pasta webapps onde o projeto foi construído.
+
+Por exemplo, se o projeto foi construído em /dspace, aponte a configuração do módulo jspui conforme o exemplo:
+
+docBase="/dspace/webapps/jspui"
+
+Faça o mesmo para os demais módulos, rest, solr e os demais comforme a necessidade. Por exemplo, xmlui.
+
+
+
+### Configuração do tomcat no intellij
+
+É necessário informar a variável dspace.dir para VM.
+Passe o comando como -Ddspace.dir=/dspace
+caso o projeto esteja construído em /dspace
+
+
+
+### Configuração do maven
+
+Aponte para o pom.xml do projeto raiz (root), o [dspace-parent]
+
+
+
+### Configuração do ant
+
+Aponte para o build.xml que fica dentro da pasta target do projeto principal, que aparece após usar o mavem pela primeira vez.
+O arquivo fica em [dspace-parent]/dspace/dspace-installer/build.xml
+
+
+
+#### Postgres para desenvolvimento
+
+Renomeie o arquivo local.cfg.DEV para local.cfg no mesmo local.
+Basicamente esse arquivo diz que o dspace será construído em /dspace e que o user é dspace e password é dspace.
+A senha do usuário administrador do postgres é postgres.
+
+
+Basta levantar o postgres pelo docker-compose.
+Para usar o arquivo de desenvolvimento rode:
+
+docker-compose -f docker-compose-DEV.yml up
+
+Caso o banco não tenha sido configurado, utilize docker-compose up --build.
+A configuração do banco é feita automaticamente durante a configuração das imagens.
+
+
+
