@@ -31,6 +31,9 @@ RUN apt update && apt upgrade -y \
         curl \
         git \
         nano \
+        imagemagick \
+        ghostscript
+
     && mkdir -p "$CATALINA_HOME" \
     && curl -fSL "$TOMCAT_TGZ_URL" -o tomcat.tar.gz \
     && tar -xf tomcat.tar.gz --strip-components=1 -C "$CATALINA_HOME" \
