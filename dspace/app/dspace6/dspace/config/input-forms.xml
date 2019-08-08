@@ -76,7 +76,7 @@
          <dc-schema>arq</dc-schema>
          <dc-element>provenance</dc-element>
          <dc-qualifier>archaeologicalsite</dc-qualifier>
-         <label>Archaeological Site</label>
+         <label>Sítio Arqueológico</label>
          <input-type>onebox</input-type>
          <hint>Nome do(s) sítio(s) arqueológico(s) de proveniência do material.</hint>
          <required>O nome do sítio arquelógico é obrigatório.</required>
@@ -277,7 +277,7 @@
          <label>Tipo de material</label>
          <input-type value-pairs-name="materialtype">list</input-type>
          <hint>Marque os materiais que compõem o artefato.</hint>
-         <required></required>
+         <required>true</required>
        </field>
 
        <field>
@@ -287,7 +287,7 @@
          <label> Quantidade de itens </label>
          <input-type>onebox</input-type>
          <hint> Entre com a quantidade de peças que compôem o artefato</hint>
-         <required></required>
+         <required>true</required>
        </field>
 
        <field>
@@ -295,11 +295,77 @@
          <dc-element>type</dc-element>
          <dc-qualifier>productiontechnique</dc-qualifier>
          <repeatable>true</repeatable>
-         <label>Técnica de Producação</label>
+         <label>Técnica de Produção</label>
          <input-type value-pairs-name="productiontechnique">list</input-type>
          <hint>Marque os técnicas de produção utilizadas.</hint>
-         <required></required>
+         <required>true</required>
        </field>
+
+       <field>
+         <dc-schema>arq</dc-schema>
+         <dc-element>type</dc-element>
+         <dc-qualifier>decoration</dc-qualifier>
+         <repeatable>true</repeatable>
+         <label>Decoração</label>
+         <input-type value-pairs-name="decoration">list</input-type>
+         <hint>Marque as decorações utilizadas.</hint>
+         <required>true</required>
+       </field>
+
+       <field>
+         <dc-schema>arq</dc-schema>
+         <dc-element>type</dc-element>
+         <dc-qualifier>integrity</dc-qualifier>
+         <repeatable>false</repeatable>
+         <label>Integridade</label>
+         <input-type value-pairs-name="integrity">list</input-type>
+         <hint>Marque o estado de integridade da peça</hint>
+         <required>true</required>
+       </field>
+
+       <field>
+         <dc-schema>arq</dc-schema>
+         <dc-element>type</dc-element>
+         <dc-qualifier>conservationstate</dc-qualifier>
+         <repeatable>false</repeatable>
+         <label>Estado de conservação</label>
+         <input-type value-pairs-name="conservationstate">list</input-type>
+         <hint>Marque o estado de integridade da peça</hint>
+         <required>true</required>
+       </field>
+
+       <field>
+         <dc-schema>arq</dc-schema>
+         <dc-element>type</dc-element>
+         <dc-qualifier>conservationstatedescription</dc-qualifier>
+         <label> Descrição do estado de conservação </label>
+         <input-type>textarea</input-type>
+         <hint> Descreva o estado de conservação da peça</hint>
+         <required>true</required>
+       </field>
+
+       <field>
+         <dc-schema>arq</dc-schema>
+         <dc-element>modified</dc-element>
+         <dc-qualifier>interventions</dc-qualifier>
+         <repeatable>true</repeatable>
+         <label>Intervenções sofridas</label>
+         <input-type value-pairs-name="interventions">list</input-type>
+         <hint>Marque as intervenções sofridas</hint>
+         <required>true</required>
+       </field>
+
+       <field>
+         <dc-schema>arq</dc-schema>
+         <dc-element>modified</dc-element>
+         <dc-qualifier>packaging</dc-qualifier>
+         <repeatable>false</repeatable>
+         <label> Acondicionamento </label>
+         <input-type value-pairs-name="packaging">list</input-type>
+         <hint>Marque o tipo de acondicionamento do material</hint>
+         <required>true</required>
+       </field>
+
 
      </page>
    </form>
@@ -865,33 +931,33 @@
      </pair>
 
      <pair>
-       <displayed-value>shredding</displayed-value>
-       <stored-value>Picoteado</stored-value>
+       <displayed-value> Picoteado </displayed-value>
+       <stored-value>shredding </stored-value>
      </pair>
 
      <pair>
-       <displayed-value>polish</displayed-value>
-       <stored-value>Polido</stored-value>
+       <displayed-value> Polido </displayed-value>
+       <stored-value>polish </stored-value>
      </pair>
 
      <pair>
-       <displayed-value>modeled</displayed-value>
-       <stored-value>Modelado</stored-value>
+       <displayed-value>Modelado </displayed-value>
+       <stored-value>modeled</stored-value>
      </pair>
 
      <pair>
-       <displayed-value>perfuration</displayed-value>
-       <stored-value>Perfurado</stored-value>
+       <displayed-value>Perfurado</displayed-value>
+       <stored-value>perfuration </stored-value>
      </pair>
 
      <pair>
-       <displayed-value>rolet</displayed-value>
-       <stored-value>Roletado</stored-value>
+       <displayed-value>Roletado</displayed-value>
+       <stored-value>rolet </stored-value>
      </pair>
 
      <pair>
-       <displayed-value>turning</displayed-value>
-       <stored-value>Torneado</stored-value>
+       <displayed-value>Torneado</displayed-value>
+       <stored-value>turning</stored-value>
      </pair>
 
      <pair>
@@ -900,8 +966,8 @@
      </pair>
 
      <pair>
-       <displayed-value>taxidermy</displayed-value>
-       <stored-value>Taxidermizado</stored-value>
+       <displayed-value>Taxidermizado</displayed-value>
+       <stored-value>taxidermy</stored-value>
      </pair>
 
      <pair>
@@ -910,18 +976,18 @@
      </pair>
 
      <pair>
-       <displayed-value>blowed</displayed-value>
-       <stored-value>Assoprado</stored-value>
+       <displayed-value>Assoprado</displayed-value>
+       <stored-value>blowed</stored-value>
      </pair>
 
      <pair>
-       <displayed-value>cast</displayed-value>
-       <stored-value>Fundido</stored-value>
+       <displayed-value>Fundido</displayed-value>
+       <stored-value>cast</stored-value>
      </pair>
 
      <pair>
-       <displayed-value>forged</displayed-value>
-       <stored-value>Forjado</stored-value>
+       <displayed-value>Forjado</displayed-value>
+       <stored-value>forged</stored-value>
      </pair>
 
      <pair>
@@ -935,8 +1001,170 @@
      </pair>
 
    </value-pairs>
+   
 
+   <value-pairs value-pairs-name="decoration" dc-term="type">
+     <pair>
+       <displayed-value>Alisado</displayed-value>
+       <stored-value>smooth</stored-value>
+     </pair>
 
+     <pair>
+       <displayed-value>Brunido</displayed-value>
+       <stored-value>burned</stored-value>
+     </pair>
+
+     <pair>
+       <displayed-value>Corrugado</displayed-value>
+       <stored-value>corrugated</stored-value>
+     </pair>
+
+     <pair>
+       <displayed-value>Escovado</displayed-value>
+       <stored-value>brushed</stored-value>
+     </pair>
+
+   </value-pairs>
+   
+   
+
+   <value-pairs value-pairs-name="integrity" dc-term="type">
+     <pair>
+       <displayed-value>Íntegro</displayed-value>
+       <stored-value>intact</stored-value>
+     </pair>
+
+     <pair>
+       <displayed-value>Fragmentado</displayed-value>
+       <stored-value>fragmented</stored-value>
+     </pair>
+
+     <pair>
+       <displayed-value>Reconstituído</displayed-value>
+       <stored-value>restored</stored-value>
+     </pair>
+
+   </value-pairs>  
+   
+   
+   <value-pairs value-pairs-name="conservationstate" dc-term="type">
+     <pair>
+       <displayed-value>Bom (sem deterioração)</displayed-value>
+       <stored-value>good</stored-value>
+     </pair>
+     
+     <pair>
+       <displayed-value>Regular - (não compromete o todo. Ex.: fissuras, esmaecimento, afloramento de sais, esfarelamento etc.) </displayed-value>
+       <stored-value>regular</stored-value>
+     </pair>
+     
+     <pair>
+       <displayed-value> Ruim (compromete o todo. Ex.: quebradiço, com manchas, alto grau de corrosão) </displayed-value>
+       <stored-value> bad </stored-value>
+     </pair>
+     
+     <pair>
+       <displayed-value> Péssimo (perdas irreversíveis) </displayed-value>
+       <stored-value> irrecoverable </stored-value>
+     </pair>
+   </value-pairs>
+   
+   
+   
+
+   <value-pairs value-pairs-name="interventions" dc-term="modified">
+
+     <pair>
+       <displayed-value> Higienização a seco </displayed-value>
+       <stored-value>dryhigienization</stored-value>
+     </pair>
+
+     <pair>
+       <displayed-value> Higienização com água </displayed-value>
+       <stored-value>waterhigienization </stored-value>
+     </pair>
+
+     <pair>
+       <displayed-value> Colagem/refixação </displayed-value>
+       <stored-value>pasted</stored-value>
+     </pair>
+
+     <pair>
+       <displayed-value> Restauração/reconstituição </displayed-value>
+       <stored-value>restauration</stored-value>
+     </pair>
+
+     <pair>
+       <displayed-value> Dessalinização </displayed-value>
+       <stored-value>dessalinization</stored-value>
+     </pair>
+
+     <pair>
+       <displayed-value> Remoção </displayed-value>
+       <stored-value>remotion</stored-value>
+     </pair>
+
+     <pair>
+       <displayed-value> Consolidação </displayed-value>
+       <stored-value>consolidation</stored-value>
+     </pair>
+
+     <pair>
+       <displayed-value> Estabilização </displayed-value>
+       <stored-value>stabilization</stored-value>
+     </pair>
+
+     <pair>
+       <displayed-value> Outro </displayed-value>
+       <stored-value>other</stored-value>
+     </pair>
+
+     <pair>
+       <displayed-value> Não se aplica </displayed-value>
+       <stored-value>notapplicable</stored-value>
+     </pair>
+
+   </value-pairs>
+   
+   
+   
+
+   <value-pairs value-pairs-name="packaging" dc-term="modified">
+     <pair>
+       <displayed-value>Saco Plástico (Polietileno ou poliéster)</displayed-value>
+       <stored-value>plasticpack</stored-value>
+     </pair>
+
+     <pair>
+       <displayed-value>Tecido não tecido de polipropileno (TNT)</displayed-value>
+       <stored-value>plasticfabricpack</stored-value>
+     </pair>
+
+     <pair>
+       <displayed-value>Não tecido de polietileno de alta densidade Tyvek)</displayed-value>
+       <stored-value>polietilenefabricpack</stored-value>
+     </pair>
+
+     <pair>
+       <displayed-value>Plástico Bolha</displayed-value>
+       <stored-value>bubbleplasticpack</stored-value>
+     </pair>
+
+     <pair>
+       <displayed-value>Papel livre de ácido ou ph neutro</displayed-value>
+       <stored-value>acidfreepaperpack</stored-value>
+     </pair>
+
+     <pair>
+       <displayed-value>Espuma de polietileno</displayed-value>
+       <stored-value>foampack</stored-value>
+     </pair>
+
+     <pair>
+       <displayed-value> Manta acrílica </displayed-value>
+       <stored-value>acrilicpack</stored-value>
+     </pair>
+   </value-pairs>
 
  </form-value-pairs>
 
