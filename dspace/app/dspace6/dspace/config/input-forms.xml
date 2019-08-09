@@ -39,9 +39,10 @@
 
    <form name="arq">
 <!--     Procedência e Localização Atual-->
-     <page number="1" title="Seção 1" >
+     <page number="1" title="Dados Iniciais" >
        <!-- Campo obrigatório no dpace-->
        <field>
+         <!-- Campo obrigatório no dspace -->
          <dc-schema>dc</dc-schema>
          <dc-element>title</dc-element>
          <label>Denominação do Material</label>
@@ -50,19 +51,78 @@
          <required>É obrigatório informar a denominação do material.</required>
        </field>
 
-       <!-- Campo obrigatório no dpace-->
        <field>
+         <!-- Campo obrigatório no dspace -->
          <dc-schema>dc</dc-schema>
-         <dc-element>date</dc-element>
-         <dc-qualifier>issued</dc-qualifier>
-         <repeatable>false</repeatable>
-         <label>Data da entrada no acervo</label>
-         <input-type>date</input-type>
-         <hint>Insira a data de entrada do material no acervo. Dia e mês podem ficar em branco se necessário.</hint>
-         <required>Inserir pelo menos o ano é obrigatório.</required>
+         <dc-element>contributor</dc-element>
+         <dc-qualifier>author</dc-qualifier>
+         <repeatable>true</repeatable>
+         <label>Pesquisadores</label>
+         <input-type>name</input-type>
+         <hint>Indique os pesquisadores responsáveis pela coleta dos artefatos.</hint>
+         <required>Informe pelo menos um dos pesquisadores.</required>
        </field>
-       <field>
 
+       <field>
+         <dc-schema>arq</dc-schema>
+         <dc-element>contributor</dc-element>
+         <dc-qualifier>researcheremail</dc-qualifier>
+         <repeatable>true</repeatable>
+         <label>E-mail do pesquisador </label>
+         <input-type>onebox</input-type>
+         <hint></hint>
+         <required></required>
+       </field>
+
+       <field>
+         <dc-schema>arq</dc-schema>
+         <dc-element>contributor</dc-element>
+         <dc-qualifier>researcherphone</dc-qualifier>
+         <repeatable>true</repeatable>
+         <label>Telefone do pesquisador </label>
+         <input-type>onebox</input-type>
+         <hint></hint>
+       </field>
+
+       <field>
+         <!-- Campo obrigatório no dspace -->
+         <dc-schema>dc</dc-schema>
+         <dc-element>subject</dc-element>
+         <repeatable>true</repeatable>
+         <label>Palavras-chave</label>
+         <input-type>onebox</input-type>
+         <hint>Indique alguns termos para facilitar a busca</hint>
+         <required>Informe pelo menos uma palavra chave.</required>
+       </field>
+
+       <field>
+         <!-- Campo obrigatório no dspace -->
+         <dc-schema>dc</dc-schema>
+         <dc-element>description</dc-element>
+         <dc-qualifier>abstract</dc-qualifier>
+         <repeatable>false</repeatable>
+         <label>Descrição sucinta</label>
+         <input-type>textarea</input-type>
+         <hint>Descreva brevemente os artefatos</hint>
+         <required></required>
+       </field>
+
+       <field>
+         <!-- Campo obrigatório no dspace -->
+         <dc-schema>dc</dc-schema>
+         <dc-element>type</dc-element>
+         <repeatable>false</repeatable>
+         <label>Tipo do material</label>
+         <input-type value-pairs-name="category" >dropdown</input-type>
+         <hint>Selecione o tipo que melhor descreve o material</hint>
+         <required></required>
+       </field>
+
+     </page>
+
+     <page number="2" title="Identificação" >
+
+       <field>
          <dc-schema>arq</dc-schema>
          <dc-element>project</dc-element>
          <dc-qualifier>name</dc-qualifier>
@@ -74,22 +134,48 @@
 
        <field>
          <dc-schema>arq</dc-schema>
-         <dc-element>provenance</dc-element>
-         <dc-qualifier>archaeologicalsite</dc-qualifier>
-         <label>Sítio Arqueológico</label>
-         <input-type>onebox</input-type>
-         <hint>Nome do(s) sítio(s) arqueológico(s) de proveniência do material.</hint>
-         <required>O nome do sítio arquelógico é obrigatório.</required>
-       </field>
-
-       <field>
-         <dc-schema>arq</dc-schema>
          <dc-element>identifier</dc-element>
          <dc-qualifier>processnumber</dc-qualifier>
          <label>Número do processo no IPHAN</label>
          <input-type>onebox</input-type>
          <hint>Número do processo junto ao IPHAN.</hint>
          <required>O número do processo é obrigatório.</required>
+       </field>
+
+       <!--       Código de identificação de cada peça-->
+       <field>
+         <dc-schema>arq</dc-schema>
+         <dc-element>identifier</dc-element>
+         <dc-qualifier>registernumber</dc-qualifier>
+         <repeatable>true</repeatable>
+         <label>Número de registro</label>
+         <input-type>onebox</input-type>
+         <hint>Número de registro inserido nas peças arqueológicas</hint>
+         <required>É obrigatório informar o registro.</required>
+       </field>
+
+     </page>
+
+     <page number="3" title="Procedência" >
+
+       <field>
+         <dc-schema>arq</dc-schema>
+         <dc-element>coverage</dc-element>
+         <dc-qualifier>state</dc-qualifier>
+         <label>Estado</label>
+         <input-type>onebox</input-type>
+         <hint>Estado aonde foi encontrado o material arqueológico.</hint>
+         <required>É obrigatório informar o estado.</required>
+       </field>
+
+       <field>
+         <dc-schema>arq</dc-schema>
+         <dc-element>coverage</dc-element>
+         <dc-qualifier>city</dc-qualifier>
+         <label>Município</label>
+         <input-type>onebox</input-type>
+         <hint>Cidade aonde foi encontrado o material arquelógico.</hint>
+         <required>É obrigatório informar a cidade.</required>
        </field>
 
        <field>
@@ -104,69 +190,12 @@
 
        <field>
          <dc-schema>arq</dc-schema>
-         <dc-element>coverage</dc-element>
-         <dc-qualifier>city</dc-qualifier>
-         <label>Município</label>
+         <dc-element>provenance</dc-element>
+         <dc-qualifier>archaeologicalsite</dc-qualifier>
+         <label>Sítio Arqueológico</label>
          <input-type>onebox</input-type>
-         <hint>Cidade onde foi encontrado o material arquelógico.</hint>
-         <required>É obrigatório informar a cidade.</required>
-       </field>
-
-       <field>
-         <dc-schema>arq</dc-schema>
-         <dc-element>coverage</dc-element>
-         <dc-qualifier>state</dc-qualifier>
-         <label>Estado</label>
-         <input-type>onebox</input-type>
-         <hint>Estado aonde foi encontrado o material arqueológico.</hint>
-         <required>É obrigatório informar o estado.</required>
-       </field>
-
-     </page>
-
-<!--     Dados Gerais-->
-     <page number="2" title="Seção 2" >
-<!--       Código de identificação de cada peça-->
-       <field>
-         <dc-schema>arq</dc-schema>
-         <dc-element>identifier</dc-element>
-         <dc-qualifier>registernumber</dc-qualifier>
-         <repeatable>true</repeatable>
-         <label>Número de registro</label>
-         <input-type>onebox</input-type>
-         <hint>Número de registro inserido nas peças arqueológicas</hint>
-         <required>É obrigatório o registro.</required>
-       </field>
-
-<!--       <field>-->
-<!--         <dc-schema>arq</dc-schema>-->
-<!--         <dc-element>collection</dc-element>-->
-<!--         <dc-qualifier>denomination</dc-qualifier>-->
-<!--         <label>Denominação</label>-->
-<!--         <input-type>onebox</input-type>-->
-<!--         <hint>Denominação do material. Ex: fragmento de ponta de flecha.</hint>-->
-<!--         <required>É obrigatório informar a denominação.</required>-->
-<!--       </field>-->
-
-       <field>
-         <dc-schema>arq</dc-schema>
-         <dc-element>description</dc-element>
-         <dc-qualifier>fulldescription</dc-qualifier>
-         <label>Descrição completa</label>
-         <input-type>textarea</input-type>
-         <hint>Descrição do rica em detalhes do artefato. Ex: Dois cravos inteiros produzidos em ferro. </hint>
-         <required>É obrigatório informar a descrição.</required>
-       </field>
-
-       <field>
-         <dc-schema>arq</dc-schema>
-         <dc-element>physicalobject</dc-element>
-         <dc-qualifier>category</dc-qualifier>
-         <repeatable>false</repeatable>
-         <label>Categoria do Material</label>
-         <input-type value-pairs-name="category">list</input-type>
-         <hint>Marcar qual a categoria que o artefato pertence. </hint>
-         <required>Informar a categoria é obrigatório.</required>
+         <hint>Nome do(s) sítio(s) arqueológico(s) de proveniência do material.</hint>
+         <required>O nome do sítio arquelógico é obrigatório.</required>
        </field>
 
        <field>
@@ -198,77 +227,24 @@
          <hint> Indique a profundidade em que o material foi encontrado.</hint>
        </field>
 
-     </page>
-
-<!--     Identificação do pesquisador e receptor do material-->
-     <page number="3" title="Seção 3" >
-       <field>
-         <dc-schema>arq</dc-schema>
-         <dc-element>contributor</dc-element>
-         <dc-qualifier>researchername</dc-qualifier>
-         <label>Pesquisador </label>
-         <input-type>onebox</input-type>
-         <hint>Nome do pesquisador responsável.</hint>
-         <required>É obrigatório informar o nome do pesquisador.</required>
-       </field>
-
-       <field>
-         <dc-schema>arq</dc-schema>
-         <dc-element>contributor</dc-element>
-         <dc-qualifier>researcheremail</dc-qualifier>
-         <label>E-mail do pesquisador </label>
-         <input-type>onebox</input-type>
-         <hint></hint>
-         <required>É obrigatório informar o email do pesquisador.</required>
-       </field>
-
-       <field>
-         <dc-schema>arq</dc-schema>
-         <dc-element>contributor</dc-element>
-         <dc-qualifier>researcherphone</dc-qualifier>
-         <label>Telefone do pesquisador </label>
-         <input-type>onebox</input-type>
-         <hint></hint>
-       </field>
-     </page>
-
-<!-- Dados sobre a reserva técnica-->
-     <page number="4" title="Seção 4" >
-
-       <field>
-         <dc-schema>arq</dc-schema>
-         <dc-element>location</dc-element>
-         <dc-qualifier>boxid</dc-qualifier>
-         <label> Identificação da caixa </label>
-         <input-type>onebox</input-type>
-         <hint> Código de identificação da caixa onde está o material</hint>
-         <required>É obrigatório informar o código de identificação da caixa.</required>
-       </field>
-
-       <field>
-         <dc-schema>arq</dc-schema>
-         <dc-element>location</dc-element>
-         <dc-qualifier>shelflevel</dc-qualifier>
-         <label> Nível na estante </label>
-         <input-type>onebox</input-type>
-         <hint> Identifique em qual andar da estante está a caixa</hint>
-         <required>É obrigatório informar o andar da estante.</required>
-       </field>
-
-       <field>
-         <dc-schema>arq</dc-schema>
-         <dc-element>location</dc-element>
-         <dc-qualifier>shelfid</dc-qualifier>
-         <label> Identificação da estante </label>
-         <input-type>onebox</input-type>
-         <hint> Código de identificação da estante</hint>
-         <required>É obrigatório informar o código de identificação da estante.</required>
-       </field>
 
      </page>
 
-<!--     Descrição da características do material e estado de conservação-->
-     <page number="5" title="Seção 5" >
+<!--     Dados Gerais-->
+     <page number="4" title="Descrição" >
+
+
+       <!-- Campo obrigatório no dspace -->
+       <field>
+         <dc-schema>dc</dc-schema>
+         <dc-element>description</dc-element>
+         <label>Descrição completa</label>
+         <input-type>textarea</input-type>
+         <hint>Descrição do rica em detalhes do artefato. </hint>
+         <required>É obrigatório informar a descrição.</required>
+       </field>
+
+
        <field>
          <dc-schema>arq</dc-schema>
          <dc-element>medium</dc-element>
@@ -277,16 +253,6 @@
          <label>Tipo de material</label>
          <input-type value-pairs-name="materialtype">list</input-type>
          <hint>Marque os materiais que compõem o artefato.</hint>
-         <required>true</required>
-       </field>
-
-       <field>
-         <dc-schema>arq</dc-schema>
-         <dc-element>tableofcontents</dc-element>
-         <dc-qualifier>quantity</dc-qualifier>
-         <label> Quantidade de itens </label>
-         <input-type>onebox</input-type>
-         <hint> Entre com a quantidade de peças que compôem o artefato</hint>
          <required>true</required>
        </field>
 
@@ -366,8 +332,91 @@
          <required>true</required>
        </field>
 
+       <field>
+         <dc-schema>arq</dc-schema>
+         <dc-element>tableofcontents</dc-element>
+         <dc-qualifier>quantity</dc-qualifier>
+         <label> Quantidade de itens </label>
+         <input-type>onebox</input-type>
+         <hint> Entre com a quantidade de peças que compôem o artefato</hint>
+         <required>true</required>
+       </field>
 
      </page>
+
+
+<!-- Dados sobre a reserva técnica-->
+     <page number="5" title="Armazenamento" >
+
+       <!-- Campo obrigatório no dpace-->
+       <field>
+         <dc-schema>dc</dc-schema>
+         <dc-element>date</dc-element>
+         <dc-qualifier>issued</dc-qualifier>
+         <repeatable>false</repeatable>
+         <label>Data da entrada no acervo</label>
+         <input-type>date</input-type>
+         <hint>Insira a data de entrada do material no acervo. Dia e mês podem ficar em branco se necessário.</hint>
+         <required>Inserir pelo menos o ano é obrigatório.</required>
+       </field>
+
+       <field>
+         <dc-schema>arq</dc-schema>
+         <dc-element>location</dc-element>
+         <dc-qualifier>boxid</dc-qualifier>
+         <label> Identificação da caixa </label>
+         <input-type>onebox</input-type>
+         <hint> Código de identificação da caixa onde está o material</hint>
+         <required>É obrigatório informar o código de identificação da caixa.</required>
+       </field>
+
+       <field>
+         <dc-schema>arq</dc-schema>
+         <dc-element>location</dc-element>
+         <dc-qualifier>shelflevel</dc-qualifier>
+         <label> Nível na estante </label>
+         <input-type>onebox</input-type>
+         <hint> Identifique em qual andar da estante está a caixa</hint>
+         <required>É obrigatório informar o andar da estante.</required>
+       </field>
+
+       <field>
+         <dc-schema>arq</dc-schema>
+         <dc-element>location</dc-element>
+         <dc-qualifier>shelfid</dc-qualifier>
+         <label> Identificação da estante </label>
+         <input-type>onebox</input-type>
+         <hint> Código de identificação da estante</hint>
+         <required>É obrigatório informar o código de identificação da estante.</required>
+       </field>
+
+     </page>
+
+     <!--     Identificação do pesquisador e receptor do material-->
+<!--     <page number="6" title="Contatos" >-->
+
+<!--       <field>-->
+<!--         <dc-schema>arq</dc-schema>-->
+<!--         <dc-element>contributor</dc-element>-->
+<!--         <dc-qualifier>researcheremail</dc-qualifier>-->
+<!--         <repeatable>true</repeatable>-->
+<!--         <label>E-mail do pesquisador </label>-->
+<!--         <input-type>onebox</input-type>-->
+<!--         <hint></hint>-->
+<!--         <required></required>-->
+<!--       </field>-->
+
+<!--       <field>-->
+<!--         <dc-schema>arq</dc-schema>-->
+<!--         <dc-element>contributor</dc-element>-->
+<!--         <dc-qualifier>researcherphone</dc-qualifier>-->
+<!--         <repeatable>true</repeatable>-->
+<!--         <label>Telefone do pesquisador </label>-->
+<!--         <input-type>onebox</input-type>-->
+<!--         <hint></hint>-->
+<!--       </field>-->
+<!--     </page>-->
+
    </form>
 
    <form name="traditional">
@@ -736,7 +785,7 @@
    </value-pairs>
 
 <!--   arq metadata-->
-   <value-pairs value-pairs-name="category" dc-term=" physicalobject">
+   <value-pairs value-pairs-name="category" dc-term="type">
      <pair>
        <displayed-value>Artefato</displayed-value>
        <stored-value>artifact</stored-value>
@@ -780,7 +829,7 @@
 
 
    <!--   arq metadata - area-->
-   <value-pairs value-pairs-name="area" dc-term=" spatial">
+   <value-pairs value-pairs-name="area" dc-term="spatial">
      <pair>
        <displayed-value>Quadrícula</displayed-value>
        <stored-value>square</stored-value>
