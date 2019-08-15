@@ -104,7 +104,7 @@
          <label>Descrição sucinta</label>
          <input-type>textarea</input-type>
          <hint>Descreva brevemente os artefatos</hint>
-         <required></required>
+         <required>Informação obrigatória</required>
        </field>
 
        <field>
@@ -115,7 +115,7 @@
          <label>Tipo do material</label>
          <input-type value-pairs-name="category" >dropdown</input-type>
          <hint>Selecione o tipo que melhor descreve o material</hint>
-         <required></required>
+         <required>Informação obrigatória</required>
        </field>
 
      </page>
@@ -126,7 +126,7 @@
          <dc-schema>arq</dc-schema>
          <dc-element>project</dc-element>
          <dc-qualifier>name</dc-qualifier>
-         <label>Nome do Projeto</label>
+         <label>Nome do Projeto no IPHAN</label>
          <input-type>onebox</input-type>
          <hint>Entre com o nome do projeto que foi registrado junto ao IPHAN.</hint>
          <required>O nome do projeto é obrigatório.</required>
@@ -205,7 +205,6 @@
          <label>Descrição da área onde o material foi encontrado</label>
          <input-type>textarea</input-type>
          <hint>Descreva a area onde o material foi encontrado</hint>
-         <required>É obrigatório informar a área descrição da área.</required>
        </field>
 
        <field>
@@ -215,7 +214,6 @@
          <label>Identificação complementar da área</label>
          <input-type value-pairs-name="area">qualdrop_value</input-type>
          <hint>Indicar a área na qual o material foi encontrado.</hint>
-         <required>É obrigatório informar a área.</required>
        </field>
 
        <field>
@@ -241,7 +239,6 @@
          <label>Descrição completa</label>
          <input-type>textarea</input-type>
          <hint>Descrição do rica em detalhes do artefato. </hint>
-         <required>É obrigatório informar a descrição.</required>
        </field>
 
 
@@ -253,7 +250,7 @@
          <label>Tipo de material</label>
          <input-type value-pairs-name="materialtype">list</input-type>
          <hint>Marque os materiais que compõem o artefato.</hint>
-         <required>true</required>
+         <required>Informação obrigatória</required>
        </field>
 
        <field>
@@ -264,7 +261,7 @@
          <label>Técnica de Produção</label>
          <input-type value-pairs-name="productiontechnique">list</input-type>
          <hint>Marque os técnicas de produção utilizadas.</hint>
-         <required>true</required>
+         <required>Informação obrigatória</required>
        </field>
 
        <field>
@@ -275,7 +272,7 @@
          <label>Decoração</label>
          <input-type value-pairs-name="decoration">list</input-type>
          <hint>Marque as decorações utilizadas.</hint>
-         <required>true</required>
+         <required>Informação obrigatória</required>
        </field>
 
        <field>
@@ -286,7 +283,7 @@
          <label>Integridade</label>
          <input-type value-pairs-name="integrity">list</input-type>
          <hint>Marque o estado de integridade da peça</hint>
-         <required>true</required>
+         <required>Informação obrigatória</required>
        </field>
 
        <field>
@@ -297,7 +294,7 @@
          <label>Estado de conservação</label>
          <input-type value-pairs-name="conservationstate">list</input-type>
          <hint>Marque o estado de integridade da peça</hint>
-         <required>true</required>
+         <required>Informação obrigatória</required>
        </field>
 
        <field>
@@ -307,7 +304,6 @@
          <label> Descrição do estado de conservação </label>
          <input-type>textarea</input-type>
          <hint> Descreva o estado de conservação da peça</hint>
-         <required>true</required>
        </field>
 
        <field>
@@ -318,7 +314,7 @@
          <label>Intervenções sofridas</label>
          <input-type value-pairs-name="interventions">list</input-type>
          <hint>Marque as intervenções sofridas</hint>
-         <required>true</required>
+         <required>Informação obrigatória</required>
        </field>
 
        <field>
@@ -329,7 +325,7 @@
          <label> Acondicionamento </label>
          <input-type value-pairs-name="packaging">list</input-type>
          <hint>Marque o tipo de acondicionamento do material</hint>
-         <required>true</required>
+         <required>Informação obrigatória</required>
        </field>
 
        <field>
@@ -339,7 +335,7 @@
          <label> Quantidade de itens </label>
          <input-type>onebox</input-type>
          <hint> Entre com a quantidade de peças que compôem o artefato</hint>
-         <required>true</required>
+         <required>Informação obrigatória</required>
        </field>
 
      </page>
