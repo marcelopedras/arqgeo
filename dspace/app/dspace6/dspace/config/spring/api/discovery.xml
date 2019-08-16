@@ -103,6 +103,8 @@
 		        <ref bean="searchFilterContentInOriginalBundle"/>
                 <!--    Marcelo custom - Search by city-->
 		        <ref bean="searchFilterCity"/>
+                <!--    Marcelo custom - Search by Archaeological Site-->
+		        <ref bean="searchFilterArchaeologicalSite"/>
             </list>
         </property>
         <!-- Set TagCloud configuration per discovery configuration -->
@@ -119,6 +121,8 @@
                 <ref bean="searchFilterFileDescriptionInOriginalBundle" />
                 <!--    Marcelo custom - Search by city-->
                 <ref bean="searchFilterCity" />
+                <!--    Marcelo custom - Search by Archaeological Site-->
+                <ref bean="searchFilterArchaeologicalSite" />
             </list>
         </property>
         <!--The sort filters for the discovery search-->
@@ -219,6 +223,8 @@
 		        <ref bean="searchFilterContentInOriginalBundle"/>
                 <!--    Marcelo custom - Search by city-->
 		        <ref bean="searchFilterCity"/>
+                <!--    Marcelo custom - Search by Archaeological Site-->
+		        <ref bean="searchFilterArchaeologicalSite"/>
 
             </list>
         </property>
@@ -236,6 +242,8 @@
                 <ref bean="searchFilterFileDescriptionInOriginalBundle" />
                 <!--    Marcelo custom - Search by city-->
                 <ref bean="searchFilterCity" />
+                <!--    Marcelo custom - Search by Archaeological Site-->
+                <ref bean="searchFilterArchaeologicalSite" />
             </list>
         </property>
         <!--The sort filters for the discovery search (same as defaultConfiguration above)-->
@@ -464,6 +472,17 @@
         <property name="metadataFields">
             <list>
                 <value>arq.coverage.city</value>
+            </list>
+        </property>
+    </bean>
+
+
+    <!--    Marcelo custom - Search by Archaeological Site-->
+    <bean id="searchFilterArchaeologicalSite" class="org.dspace.discovery.configuration.DiscoverySearchFilterFacet">
+        <property name="indexFieldName" value="archaeologicalsite"/>
+        <property name="metadataFields">
+            <list>
+                <value>arq.provenance.archaeologicalsite</value>
             </list>
         </property>
     </bean>
