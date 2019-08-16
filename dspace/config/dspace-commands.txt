@@ -1,0 +1,5 @@
+# cria thumbnails
+./dspace filter-media
+
+# reindexa busca
+./dspace  index-discovery -b

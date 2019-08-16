@@ -101,6 +101,8 @@
                 <ref bean="searchFilterSubject" />
                 <ref bean="searchFilterIssued" />
 		        <ref bean="searchFilterContentInOriginalBundle"/>
+                <!--    Marcelo custom - Search by city-->
+		        <ref bean="searchFilterCity"/>
             </list>
         </property>
         <!-- Set TagCloud configuration per discovery configuration -->
@@ -115,6 +117,8 @@
 		        <ref bean="searchFilterContentInOriginalBundle"/>
                 <ref bean="searchFilterFileNameInOriginalBundle" />
                 <ref bean="searchFilterFileDescriptionInOriginalBundle" />
+                <!--    Marcelo custom - Search by city-->
+                <ref bean="searchFilterCity" />
             </list>
         </property>
         <!--The sort filters for the discovery search-->
@@ -213,6 +217,9 @@
                 <ref bean="searchFilterSubject" />
                 <ref bean="searchFilterIssued" />
 		        <ref bean="searchFilterContentInOriginalBundle"/>
+                <!--    Marcelo custom - Search by city-->
+		        <ref bean="searchFilterCity"/>
+
             </list>
         </property>
         <!-- Set TagCloud configuration per discovery configuration -->
@@ -227,6 +234,8 @@
 		        <ref bean="searchFilterContentInOriginalBundle"/>
                 <ref bean="searchFilterFileNameInOriginalBundle" />
                 <ref bean="searchFilterFileDescriptionInOriginalBundle" />
+                <!--    Marcelo custom - Search by city-->
+                <ref bean="searchFilterCity" />
             </list>
         </property>
         <!--The sort filters for the discovery search (same as defaultConfiguration above)-->
@@ -446,6 +455,16 @@
         <property name="indexFieldName" value="original_bundle_descriptions"/>
         <property name="metadataFields">
             <list/>
+        </property>
+    </bean>
+
+<!--    Marcelo custom - Search by city-->
+    <bean id="searchFilterCity" class="org.dspace.discovery.configuration.DiscoverySearchFilterFacet">
+        <property name="indexFieldName" value="city"/>
+        <property name="metadataFields">
+            <list>
+                <value>arq.coverage.city</value>
+            </list>
         </property>
     </bean>
 
