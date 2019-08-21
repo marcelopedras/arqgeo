@@ -43,5 +43,3 @@ dspace/app/dspace6/dspace/config/local.cfg
 
 ##Ignore JRebel project configuration
 rebel.xml
-
-cache/
