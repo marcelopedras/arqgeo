@@ -15,7 +15,11 @@
 
  <form-map>
    <name-map collection-handle="default" form-name="traditional" />
-   <name-map collection-handle="123456789/2" form-name="arq" />
+   <name-map collection-handle="123456789/2"  form-name="arq" />
+   <name-map collection-handle="123456789/52" form-name="arq" />
+   <name-map collection-handle="123456789/50" form-name="arq" />
+   <name-map collection-handle="123456789/49" form-name="arq" />
+   <name-map collection-handle="123456789/51" form-name="arq" />
  </form-map>
 
 
