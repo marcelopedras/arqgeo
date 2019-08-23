@@ -129,15 +129,29 @@
         </header>
 
         <main id="content" role="main">
-        <div class="container banner">
+        <div class="container">
+
         <div class="row">
-        <div class="col-md-9 brand">
-        <h1><fmt:message key="jsp.layout.header-default.brand.heading" /></h1>
-        <fmt:message key="jsp.layout.header-default.brand.description" />
-        </div>
-        <div class="col-md-3"><img class="pull-right" src="<%= request.getContextPath() %>/image/cegeo_logo.png" alt="Cegeo logo" />
-        </div>
-        </div>
+
+
+            <div class="col-md-12">
+                <div class="pull-right" style="margin-top: 50px;">
+                <!-- Marcelo custom - Escolha do idioma -->
+                <span style="margin-right: 5px">
+                <a onclick="javascript:document.repost.locale.value = 'pt_BR'; document.repost.submit();" href="?locale=pt_BR" title="Português">
+                <img src="/jspui/image/br.png" height="25">
+                </a>
+                </span>
+                <span>
+                <a onclick="javascript:document.repost.locale.value = 'en'; document.repost.submit();" href="?locale=en" title="English">
+                <img src="/jspui/image/us.png" height="25">
+                </a>
+                </span>
+                </div>
+                <img class="img-responsive" style="margin: 0 auto;" src="<%= request.getContextPath() %>/image/brand1.png" alt="Cegeo Brand" />
+
+
+            </div>
         </div>
         <br/>
         <%-- Location bar --%>
