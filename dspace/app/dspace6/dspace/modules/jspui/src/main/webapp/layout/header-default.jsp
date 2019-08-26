@@ -131,7 +131,7 @@
         <main id="content" role="main">
         <div class="container">
 
-        <div class="row">
+        <div class="container row">
 
 
             <div class="col-md-12">
