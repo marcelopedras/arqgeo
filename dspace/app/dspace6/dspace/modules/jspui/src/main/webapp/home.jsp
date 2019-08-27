@@ -80,7 +80,7 @@
 if (submissions != null && submissions.count() > 0)
 {
 %>
-        <div class="col-md-8">
+        <div class="col-md-12">
         <div class="panel panel-primary">        
         <div id="recent-submissions-carousel" class="panel-heading carousel slide">
           <h3><fmt:message key="jsp.collection-home.recentsub"/>
@@ -133,9 +133,14 @@ if (submissions != null && submissions.count() > 0)
 		        }
 		%>
 		    <div style="padding-bottom: 50px; min-height: 200px;" class="item <%= first?"active":""%>">
-		      <div style="padding-left: 80px; padding-right: 80px; display: inline-block;"><%= Utils.addEntities(StringUtils.abbreviate(displayTitle, 400)) %> 
-		      	<a href="<%= request.getContextPath() %>/handle/<%=item.getHandle() %>" class="btn btn-success">See</a>
-                        <p><%= Utils.addEntities(StringUtils.abbreviate(displayAbstract, 500)) %></p>
+		      <div style="padding-left: 80px; padding-right: 80px; display: inline-block;width: 100%; text-align: center">
+				  <h4 style="text-align: center"><%= Utils.addEntities(StringUtils.abbreviate(displayTitle, 400)) %></h4>
+				  <p style="text-align: justify"><%= Utils.addEntities(StringUtils.abbreviate(displayAbstract, 500)) %></p>
+				  <span class="text-center">
+					  <a href="<%= request.getContextPath() %>/handle/<%=item.getHandle() %>" class="btn btn-success">
+						  <fmt:message key="org.dspace.app.webui.jsptag.ItemTag.view"/>
+					  </a>
+				  </span>
 		      </div>
 		    </div>
 		<%
