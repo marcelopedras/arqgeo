@@ -203,9 +203,10 @@ if (submissions != null && submissions.count() > 0)
 if (communities != null && communities.size() != 0)
 {
 %>
-	<div class="col-md-4">
-               <h3><fmt:message key="jsp.home.com1"/></h3>
-                <p><fmt:message key="jsp.home.com2"/></p>
+	<h3 class="text-primary"><fmt:message key="jsp.home.com1"/></h3>
+	<p><fmt:message key="jsp.home.com2"/></p>
+		<div class="col-md-12">
+
 				<div class="list-group">
 <%
 	boolean showLogos = configurationService.getBooleanProperty("jspui.home-page.logos", true);
@@ -244,14 +245,22 @@ if (communities != null && communities.size() != 0)
 <%
 }
 %>
+<%--	<%--%>
+<%--    	int discovery_panel_cols = 8;--%>
+<%--    	int discovery_facet_cols = 4;--%>
+<%--    %>--%>
+<%--	<%@ include file="discovery/static-sidebar-facet.jsp" %>--%>
+</div>
+
+<div class="container row">
 	<%
-    	int discovery_panel_cols = 8;
-    	int discovery_facet_cols = 4;
-    %>
+		int discovery_panel_cols = 12;
+		int discovery_facet_cols = 4;
+	%>
 	<%@ include file="discovery/static-sidebar-facet.jsp" %>
 </div>
 
-<div class="row">
+<div class="container row">
 	<%@ include file="discovery/static-tagcloud-facet.jsp" %>
 </div>
 
