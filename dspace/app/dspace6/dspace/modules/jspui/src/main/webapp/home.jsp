@@ -42,6 +42,8 @@
 <%@ page import="org.dspace.content.Item" %>
 <%@ page import="org.dspace.services.ConfigurationService" %>
 <%@ page import="org.dspace.services.factory.DSpaceServicesFactory" %>
+<%@ page import="org.dspace.content.Thumbnail" %>
+<%@ page import="org.dspace.core.Constants" %>
 
 <%
     List<Community> communities = (List<Community>) request.getAttribute("communities");
@@ -53,7 +55,7 @@
     String sideNews = newsService.readNewsFile(LocaleSupport.getLocalizedMessage(pageContext, "news-side.html"));
 
     ConfigurationService configurationService = DSpaceServicesFactory.getInstance().getConfigurationService();
-    
+
     boolean feedEnabled = configurationService.getBooleanProperty("webui.feed.enable");
     String feedData = "NONE";
     if (feedEnabled)
@@ -63,7 +65,7 @@
         String allFormats = StringUtils.join(formats, ",");
         feedData = "ALL:" + allFormats;
     }
-    
+
     ItemCounter ic = new ItemCounter(UIUtil.obtainContext(request));
 
     RecentSubmissions submissions = (RecentSubmissions) request.getAttribute("recent.submissions");
@@ -81,7 +83,7 @@ if (submissions != null && submissions.count() > 0)
 {
 %>
         <div class="col-md-12">
-        <div class="panel panel-primary">        
+        <div class="panel panel-primary">
         <div id="recent-submissions-carousel" class="panel-heading carousel slide">
           <h3><fmt:message key="jsp.collection-home.recentsub"/>
               <%
@@ -114,35 +116,59 @@ if (submissions != null && submissions.count() > 0)
 	    }
 	%>
           </h3>
-          
-		  <!-- Wrapper for slides -->
-		  <div class="carousel-inner">
-		    <%
-		    boolean first = true;
-		    for (Item item : submissions.getRecentSubmissions())
-		    {
-		        String displayTitle = itemService.getMetadataFirstValue(item, "dc", "title", null, Item.ANY);
-		        if (displayTitle == null)
-		        {
-		        	displayTitle = "Untitled";
-		        }
-		        String displayAbstract = itemService.getMetadataFirstValue(item, "dc", "description", "abstract", Item.ANY);
-		        if (displayAbstract == null)
-		        {
-		            displayAbstract = "";
-		        }
-		%>
-		    <div style="padding-bottom: 50px; min-height: 200px;" class="item <%= first?"active":""%>">
-		      <div style="padding-left: 80px; padding-right: 80px; display: inline-block;width: 100%; text-align: center">
-				  <h4 style="text-align: center"><%= Utils.addEntities(StringUtils.abbreviate(displayTitle, 400)) %></h4>
-				  <p style="text-align: justify"><%= Utils.addEntities(StringUtils.abbreviate(displayAbstract, 500)) %></p>
-				  <span class="text-center">
-					  <a href="<%= request.getContextPath() %>/handle/<%=item.getHandle() %>" class="btn btn-success">
-						  <fmt:message key="org.dspace.app.webui.jsptag.ItemTag.view"/>
-					  </a>
-				  </span>
-		      </div>
-		    </div>
+
+			<!-- Wrapper for slides -->
+			<div class="carousel-inner">
+				<%
+					boolean first = true;
+					for (Item item : submissions.getRecentSubmissions())
+					{
+						String displayTitle = itemService.getMetadataFirstValue(item, "dc", "title", null, Item.ANY);
+						if (displayTitle == null)
+						{
+							displayTitle = "Untitled";
+						}
+						String displayAbstract = itemService.getMetadataFirstValue(item, "dc", "description", "abstract", Item.ANY);
+						if (displayAbstract == null)
+						{
+							displayAbstract = "";
+						}
+
+//						Marcelo custom - Adicionando imagens ao carousel
+
+						Thumbnail thumbnail = itemService.getThumbnail(UIUtil.obtainContext(request), item, true);
+						String img = "/jspui/image/no-image.png";
+						String originalImage = "/jspui/image/no-image.png";
+						String bitstreamFormat = "";
+						if (thumbnail!=null) {
+							Bitstream original = thumbnail.getOriginal();
+//							bitstreamFormat = original.getFormatDescription(UIUtil.obtainContext(request));
+
+							originalImage = request.getContextPath() + "/bitstream/" + item.getHandle() + "/" + original.getSequenceID() + "/" + UIUtil.encodeBitstreamName(original.getName(), Constants.DEFAULT_ENCODING);
+
+// Thumbnail image
+//							Bitstream thumb = thumbnail.getThumb();
+//							img = request.getContextPath() + "/retrieve/" + thumb.getID() + "/" + UIUtil.encodeBitstreamName(thumb.getName(), Constants.DEFAULT_ENCODING);
+						}
+
+
+				%>
+				<div style="padding-bottom: 50px; min-height: 200px;" class="item <%= first?"active":""%>">
+					<div style="padding-left: 80px; padding-right: 80px; display: inline-block;width: 100%">
+
+						<div style="text-align: center">
+							<img style="min-height: 100px;max-height: 300px" class="img-thumbnail img-responsive" src="<%= originalImage %>">
+						</div>
+						<div class="caption text-center">
+							<h4><%= Utils.addEntities(StringUtils.abbreviate(displayTitle, 400)) %></h4>
+							<h5 style="text-align: justify"><%= Utils.addEntities(StringUtils.abbreviate(displayAbstract, 500)) %></h5>
+							<a href="<%= request.getContextPath() %>/handle/<%=item.getHandle() %>" class="btn btn-success">
+								<fmt:message key="org.dspace.app.webui.jsptag.ItemTag.view"/>
+							</a>
+						</div>
+
+					</div>
+				</div>
 		<%
 				first = false;
 		     }
@@ -177,7 +203,7 @@ if (submissions != null && submissions.count() > 0)
 if (communities != null && communities.size() != 0)
 {
 %>
-	<div class="col-md-4">		
+	<div class="col-md-4">
                <h3><fmt:message key="jsp.home.com1"/></h3>
                 <p><fmt:message key="jsp.home.com2"/></p>
 				<div class="list-group">
@@ -186,16 +212,16 @@ if (communities != null && communities.size() != 0)
     for (Community com : communities)
     {
 %><div class="list-group-item row">
-<%  
+<%
 		Bitstream logo = com.getLogo();
 		if (showLogos && logo != null) { %>
 	<div class="col-md-3">
-        <img alt="Logo" class="img-responsive" src="<%= request.getContextPath() %>/retrieve/<%= logo.getID() %>" /> 
+        <img alt="Logo" class="img-responsive" src="<%= request.getContextPath() %>/retrieve/<%= logo.getID() %>" />
 	</div>
 	<div class="col-md-9">
 <% } else { %>
 	<div class="col-md-12">
-<% }  %>		
+<% }  %>
 		<h4 class="list-group-item-heading"><a href="<%= request.getContextPath() %>/handle/<%= com.getHandle() %>"><%= com.getName() %></a>
 <%
         if (configurationService.getBooleanProperty("webui.strengths.show"))
@@ -209,7 +235,7 @@ if (communities != null && communities.size() != 0)
 		</h4>
 		<p><%= communityService.getMetadata(com, "short_description") %></p>
     </div>
-</div>                            
+</div>
 <%
     }
 %>
@@ -228,7 +254,7 @@ if (communities != null && communities.size() != 0)
 <div class="row">
 	<%@ include file="discovery/static-tagcloud-facet.jsp" %>
 </div>
-	
+
 </div>
 <%--	Marcelo custom - Movendo notícias principais para o fim da página--%>
 <div class="container">
