@@ -140,3 +140,8 @@ body {
 	height: 95px;
 	/*background-color: #f5f5f5;*/
 }
+
+/* Striped tables*/
+tr:nth-child(even) {
+	background: #F5F5F5;
+}
