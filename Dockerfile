@@ -1,7 +1,7 @@
-FROM maven:3.6.1-jdk-8-alpine as cache
-COPY ./dspace/app/dspace6 /usr/src/dspace
-WORKDIR /usr/src/dspace
-RUN mvn dependency:resolve
+#FROM maven:3.6.1-jdk-8-alpine as cache
+#COPY ./dspace/app/dspace6 /usr/src/dspace
+#WORKDIR /usr/src/dspace
+#RUN mvn dependency:resolve
 
 
 
@@ -13,7 +13,7 @@ ENV DEBIAN_FRONTEND=noninteractive
 ENV CATALINA_HOME=/usr/local/tomcat DSPACE_HOME=/dspace
 ENV JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk-amd64/
 ENV PATH=$CATALINA_HOME/bin:$DSPACE_HOME/bin:$PATH
-ENV TOMCAT_TGZ_URL=https://www.apache.org/dist/tomcat/tomcat-9/v9.0.22/bin/apache-tomcat-9.0.22.tar.gz
+ENV TOMCAT_TGZ_URL=https://www.apache.org/dist/tomcat/tomcat-9/v9.0.24/bin/apache-tomcat-9.0.24.tar.gz
 
 
 WORKDIR /tmp
@@ -62,9 +62,10 @@ COPY ./dspace/config/server.xml "$CATALINA_HOME"/conf
 ADD ./dspace/app/dspace6 dspace
 
 # Add .m2 cache to project
-COPY --from=cache /root/.m2 /root/.m2
+#COPY --from=cache /root/.m2 /root/.m2
 
 RUN cd dspace && mvn clean package -P '!dspace-lni,!dspace-oai,!dspace-sword,!dspace-swordv2,!dspace-xmlui'
+
 #RUN cd dspace && mvn package -P '!dspace-lni,!dspace-oai,!dspace-sword,!dspace-swordv2,!dspace-xmlui'
 RUN cd dspace/dspace/target/dspace-installer \
     && ant init_installation init_configs install_code copy_webapps
@@ -74,7 +75,11 @@ RUN rm -fr "$CATALINA_HOME/webapps" && mv -f /dspace/webapps "$CATALINA_HOME" \
 RUN rm -rf /usr/local/tomcat/webapps/oai \
     && rm -rf /usr/local/tomcat/webapps/sword \
     && rm -rf /usr/local/tomcat/webapps/swordv2 \
-    && rm -rf /usr/local/tomcat/webapps/xmlui
+    && rm -rf /usr/local/tomcat/webapps/xmlui \
+    && rm -rf /root/.m2 \
+    && rm -rf /tmp/dspace \
+    && apt clean && rm -rf /var/lib/apt/lists/*
+
 
 
 # Install root filesystem
@@ -83,7 +88,13 @@ COPY ./dspace/config/local.cfg /dspace/config
 COPY ./dspace/config/noticias-topo.html /dspace/config/noticias-topo.html
 COPY ./dspace/config/noticias-lado.html /dspace/config/noticias-lado.html
 
+RUN chmod u+x -R /dspace/bin/
+
+#VOLUME $DSPACE_HOME/assetstore
+
 WORKDIR /dspace
+
+
 
 EXPOSE 8080
 

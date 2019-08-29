@@ -1,4 +1,4 @@
-version: "3"
+version: "2.2"
 services:
   postgres:
     #image: postgres
@@ -7,12 +7,18 @@ services:
     #restart: always
     volumes:
       - db_data:/var/lib/postgresql/data
+      - ./database_backups:/dspace/database_backups
 
   dspace:
 #    image: dspace-63_dspace:latest
     build: .
-    ports:
-      - 80:8080
+#    ports:
+#      - 80:8080
+    expose:
+      - 8080
+    networks:
+      - default
+      - arqgeo
     depends_on:
       - postgres
     environment:
@@ -22,8 +28,14 @@ services:
       - POSTGRES_SCHEMA=dspace
       - POSTGRES_USER=dspace
       - POSTGRES_PASSWORD=password
+    volumes:
+      - ./assetstore:/dspace/assetstore
 
     command: start-dspace
 
 volumes:
   db_data:
+
+networks:
+  arqgeo:
+   name: "arqgeo"
