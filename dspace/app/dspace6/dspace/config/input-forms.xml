@@ -89,14 +89,34 @@
        </field>
 
        <field>
+         <dc-schema>arq</dc-schema>
+         <dc-element>contributor</dc-element>
+         <dc-qualifier>company</dc-qualifier>
+         <repeatable>true</repeatable>
+         <label> Empresa </label>
+         <input-type>onebox</input-type>
+         <hint></hint>
+       </field>
+
+       <field>
+         <dc-schema>arq</dc-schema>
+         <dc-element>contributor</dc-element>
+         <dc-qualifier>entrepeneur</dc-qualifier>
+         <repeatable>true</repeatable>
+         <label> Empreendedor </label>
+         <input-type>onebox</input-type>
+         <hint></hint>
+       </field>
+
+       <field>
          <!-- Campo obrigatório no dspace -->
          <dc-schema>dc</dc-schema>
          <dc-element>subject</dc-element>
          <repeatable>true</repeatable>
-         <label>Palavras-chave</label>
+         <label>Sítios Arqueológicos</label>
          <input-type>onebox</input-type>
-         <hint>Indique alguns termos para facilitar a busca</hint>
-         <required>Informe pelo menos uma palavra chave.</required>
+         <hint>Nome do(s) sítio(s) arqueológico(s) de proveniência do material.</hint>
+         <required>Informe pelo menos um sítio arqueológico</required>
        </field>
 
        <field>
@@ -120,6 +140,16 @@
          <input-type value-pairs-name="category" >dropdown</input-type>
          <hint>Selecione o tipo que melhor descreve o material</hint>
          <required>Informação obrigatória</required>
+       </field>
+
+       <field>
+         <dc-schema>arq</dc-schema>
+         <dc-element>physicalobject</dc-element>
+         <dc-qualifier>category</dc-qualifier>
+         <repeatable>true</repeatable>
+         <label>Outros materiais</label>
+         <input-type>onebox</input-type>
+         <hint>Entre com outras categorias caso ache necessário</hint>
        </field>
 
      </page>
@@ -192,15 +222,16 @@
          <required>É obrigátorio informar a macrorregião.</required>
        </field>
 
-       <field>
-         <dc-schema>arq</dc-schema>
-         <dc-element>provenance</dc-element>
-         <dc-qualifier>archaeologicalsite</dc-qualifier>
-         <label>Sítio Arqueológico</label>
-         <input-type>onebox</input-type>
-         <hint>Nome do(s) sítio(s) arqueológico(s) de proveniência do material.</hint>
-         <required>O nome do sítio arquelógico é obrigatório.</required>
-       </field>
+<!--       <field>-->
+<!--         <dc-schema>arq</dc-schema>-->
+<!--         <dc-element>provenance</dc-element>-->
+<!--         <dc-qualifier>archaeologicalsite</dc-qualifier>-->
+<!--         <repeatable>true</repeatable>-->
+<!--         <label>Sítio Arqueológico</label>-->
+<!--         <input-type>onebox</input-type>-->
+<!--         <hint>Nome do(s) sítio(s) arqueológico(s) de proveniência do material.</hint>-->
+<!--         <required>O nome do sítio arquelógico é obrigatório.</required>-->
+<!--       </field>-->
 
        <field>
          <dc-schema>arq</dc-schema>
@@ -276,14 +307,13 @@
          <label>Decoração</label>
          <input-type value-pairs-name="decoration">list</input-type>
          <hint>Marque as decorações utilizadas.</hint>
-         <required>Informação obrigatória</required>
        </field>
 
        <field>
          <dc-schema>arq</dc-schema>
          <dc-element>type</dc-element>
          <dc-qualifier>integrity</dc-qualifier>
-         <repeatable>false</repeatable>
+         <repeatable>true</repeatable>
          <label>Integridade</label>
          <input-type value-pairs-name="integrity">list</input-type>
          <hint>Marque o estado de integridade da peça</hint>
@@ -388,6 +418,15 @@
          <input-type>onebox</input-type>
          <hint> Código de identificação da estante</hint>
          <required>É obrigatório informar o código de identificação da estante.</required>
+       </field>
+
+       <field>
+         <dc-schema>dc</dc-schema>
+         <dc-element>description</dc-element>
+         <dc-qualifier>uri</dc-qualifier>
+         <label> Link para o relatório </label>
+         <input-type>onebox</input-type>
+         <hint> Insira o link para o relatório </hint>
        </field>
 
      </page>
