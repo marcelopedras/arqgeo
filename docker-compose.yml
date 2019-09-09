@@ -28,6 +28,8 @@ services:
       - POSTGRES_SCHEMA=dspace
       - POSTGRES_USER=dspace
       - POSTGRES_PASSWORD=password
+      - EMAIL_USER=arqgeo@ict.ufvjm.edu.br
+      - EMAIL_PASSWORD=ermjit6cYNeDZ1QGDyggWW71ZaXnDI
     volumes:
       - ./assetstore:/dspace/assetstore
 
