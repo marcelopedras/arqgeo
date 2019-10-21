@@ -71,7 +71,7 @@
          https://wiki.duraspace.org/display/DSDOC6x/Installing+DSpace
          ##############################################################
     -->
-    <Connector port="8080"
+    <Connector port="80"
                   maxThreads="150"
                   minSpareThreads="25"
                   enableLookups="false"

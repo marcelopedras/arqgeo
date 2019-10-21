@@ -94,8 +94,8 @@ RUN chmod u+x -R /dspace/bin/
 
 WORKDIR /dspace
 
+RUN echo "127.0.0.1   arqgeo.ict.ufvjm.edu.br" >> /etc/hosts
 
-
-EXPOSE 8080
+EXPOSE 80
 
 CMD ["start-dspace"]
