@@ -30,6 +30,8 @@ if [ -n "$DSPACE_WEBAPPS" ]; then
 fi
 # Wait for postgres
 
+# Start cron
+service cron start
 
 # Start Tomcat
 exec catalina.sh run

@@ -185,7 +185,6 @@
          <label>Número de registro</label>
          <input-type>onebox</input-type>
          <hint>Número de registro inserido nas peças arqueológicas</hint>
-         <required>É obrigatório informar o registro.</required>
        </field>
 
      </page>
@@ -206,6 +205,7 @@
          <dc-schema>arq</dc-schema>
          <dc-element>coverage</dc-element>
          <dc-qualifier>city</dc-qualifier>
+         <repeatable>true</repeatable>
          <label>Município</label>
          <input-type>onebox</input-type>
          <hint>Cidade aonde foi encontrado o material arquelógico.</hint>
@@ -219,7 +219,6 @@
          <label>Região Geográgica</label>
          <input-type>onebox</input-type>
          <hint>Macrorregião de origem do material. Ex: Vale do Jequitinhonha.</hint>
-         <required>É obrigátorio informar a macrorregião.</required>
        </field>
 
 <!--       <field>-->
@@ -355,7 +354,7 @@
          <dc-schema>arq</dc-schema>
          <dc-element>modified</dc-element>
          <dc-qualifier>packaging</dc-qualifier>
-         <repeatable>false</repeatable>
+         <repeatable>true</repeatable>
          <label> Acondicionamento </label>
          <input-type value-pairs-name="packaging">list</input-type>
          <hint>Marque o tipo de acondicionamento do material</hint>
@@ -1049,7 +1048,7 @@
      </pair>
 
      <pair>
-       <displayed-value>Modelado</displayed-value>
+       <displayed-value>Moldado</displayed-value>
        <stored-value>molded</stored-value>
      </pair>
 
@@ -1088,6 +1087,11 @@
        <stored-value>other</stored-value>
      </pair>
 
+     <pair>
+       <displayed-value>Não se aplica</displayed-value>
+       <stored-value>notapplicable</stored-value>
+     </pair>
+
    </value-pairs>
    
 
@@ -1110,6 +1114,67 @@
      <pair>
        <displayed-value>Escovado</displayed-value>
        <stored-value>brushed</stored-value>
+     </pair>
+
+     <pair>
+       <displayed-value>Ungulado</displayed-value>
+       <stored-value>ungulate</stored-value>
+     </pair>
+
+     <pair>
+       <displayed-value>Incisão</displayed-value>
+       <stored-value>incision</stored-value>
+     </pair>
+
+     <pair>
+       <displayed-value>Impressão</displayed-value>
+       <stored-value>print</stored-value>
+     </pair>
+
+     <pair>
+       <displayed-value>Plástica</displayed-value>
+       <stored-value>plastic</stored-value>
+     </pair>
+
+     <pair>
+       <displayed-value>Pintado</displayed-value>
+       <stored-value>painted</stored-value>
+     </pair>
+
+     <pair>
+       <displayed-value>Punção</displayed-value>
+       <stored-value>puncture</stored-value>
+     </pair>
+
+     <pair>
+       <displayed-value>Aplique</displayed-value>
+       <stored-value>adornment</stored-value>
+     </pair>
+
+     <pair>
+       <displayed-value>Engobe</displayed-value>
+       <stored-value>engobe</stored-value>
+     </pair>
+
+     <pair>
+       <displayed-value>Estêncil</displayed-value>
+       <stored-value>stencil</stored-value>
+     </pair>
+
+
+     <pair>
+       <displayed-value>Entalhe</displayed-value>
+       <stored-value>notch</stored-value>
+     </pair>
+
+     <pair>
+       <displayed-value>Outro</displayed-value>
+       <stored-value>other</stored-value>
+     </pair>
+
+     <pair>
+       <displayed-value>Não se aplica</displayed-value>
+       <stored-value>notapplicable</stored-value>
      </pair>
 
    </value-pairs>
@@ -1251,6 +1316,11 @@
      <pair>
        <displayed-value> Manta acrílica </displayed-value>
        <stored-value>acrilicpack</stored-value>
+     </pair>
+
+     <pair>
+       <displayed-value> Outro </displayed-value>
+       <stored-value>other</stored-value>
      </pair>
    </value-pairs>
 

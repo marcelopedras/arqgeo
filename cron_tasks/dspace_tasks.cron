@@ -1,0 +1,36 @@
+DSPACE = /dspace
+
+# Shell to use
+SHELL=/bin/sh
+
+# Set JAVA_OPTS with defaults for DSpace Cron Jobs.
+# Only provides 512MB of memory by default (which should be enough for most sites).
+JAVA_OPTS="-Xmx512M -Xms512M -Dfile.encoding=UTF-8"
+
+# Regenerate DSpace Sitemaps every 8 hours (12AM, 8AM, 4PM).
+# SiteMaps ensure that your content is more findable in Google, Google Scholar, and other major search engines.
+#0 0,8,16 * * * $DSPACE/bin/dspace generate-sitemaps > /dev/null
+
+# Clean and Update the Discovery indexes at midnight every day
+# (This ensures that any deleted documents are cleaned from the Discovery search/browse index)
+#0 0 * * * $DSPACE/bin/dspace index-discovery > /dev/null
+5 * * * * $DSPACE/bin/dspace index-discovery > /dev/null
+
+
+# Run the media filter at 03:00 every day.
+# (This task ensures that thumbnails are generated for newly add images,
+# and also ensures full text search is available for newly added PDF/Word/PPT/HTML documents)
+#0 3 * * * $DSPACE/bin/dspace filter-media
+5 * * * * $DSPACE/bin/dspace filter-media
+
+
+
+
+#   * * * * * command(s)
+#   - - - - -
+#   | | | | |
+#   | | | | ----- Day of week (0 - 7) (Sunday=0 or 7)
+#   | | | ------- Month (1 - 12)
+#   | | --------- Day of month (1 - 31)
+#   | ----------- Hour (0 - 23)
+#   ------------- Minute (0 - 59)
