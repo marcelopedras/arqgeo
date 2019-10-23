@@ -89,6 +89,10 @@ COPY ./dspace/config/local.cfg /dspace/config
 COPY ./dspace/config/noticias-topo.html /dspace/config/noticias-topo.html
 COPY ./dspace/config/noticias-lado.html /dspace/config/noticias-lado.html
 
+# Add cron task file
+COPY ./cron_tasks/dspace_tasks.cron /dspace/dspace_tasks.cron
+RUN chmod +x /dspace/dspace_tasks.cron && crontab /dspace/dspace_tasks.cron && touch /var/log/cronlog
+
 RUN chmod u+x -R /dspace/bin/
 
 #VOLUME $DSPACE_HOME/assetstore

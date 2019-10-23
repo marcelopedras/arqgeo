@@ -423,6 +423,7 @@
          <dc-schema>dc</dc-schema>
          <dc-element>description</dc-element>
          <dc-qualifier>uri</dc-qualifier>
+         <repeatable>true</repeatable>
          <label> Link para o relatório </label>
          <input-type>onebox</input-type>
          <hint> Insira o link para o relatório </hint>
