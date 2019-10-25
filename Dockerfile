@@ -62,6 +62,11 @@ COPY ./dspace/config/server.xml "$CATALINA_HOME"/conf
 # Copy source to /tmp/dspace
 ADD ./dspace/app/dspace6 dspace
 
+# Add local configs before build
+COPY ./dspace/config/local.cfg dspace/dspace/config/
+COPY ./dspace/config/noticias-topo.html dspace/dspace/config/
+COPY ./dspace/config/noticias-lado.html dspace/dspace/config/
+
 # Add .m2 cache to project
 #COPY --from=cache /root/.m2 /root/.m2
 
