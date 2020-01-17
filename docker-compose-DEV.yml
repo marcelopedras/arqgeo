@@ -6,6 +6,7 @@ services:
     #restart: always
     volumes:
       - db_data:/var/lib/postgresql/data
+      - ./database_backups:/dspace/database_backups
     ports:
       - 5432:5432
 

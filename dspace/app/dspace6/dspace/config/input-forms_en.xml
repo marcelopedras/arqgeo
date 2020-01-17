@@ -827,42 +827,42 @@
    <value-pairs value-pairs-name="category" dc-term="type">
      <pair>
        <displayed-value>Artefato</displayed-value>
-       <stored-value>Artefato</stored-value>
+       <stored-value>artifact</stored-value>
      </pair>
 
      <pair>
        <displayed-value>Ecofato</displayed-value>
-       <stored-value>Ecofato</stored-value>
+       <stored-value>ecofact</stored-value>
      </pair>
 
      <pair>
        <displayed-value>Bioarqueológico</displayed-value>
-       <stored-value>Bioarqueológico</stored-value>
+       <stored-value>bioarchaeological</stored-value>
      </pair>
 
      <pair>
        <displayed-value>Estrutura/feição</displayed-value>
-       <stored-value>Estrutura/feição</stored-value>
+       <stored-value>partofstructure</stored-value>
      </pair>
 
      <pair>
        <displayed-value>Sedimento/solo</displayed-value>
-       <stored-value>Sedimento/solo</stored-value>
+       <stored-value>sediment</stored-value>
      </pair>
 
      <pair>
        <displayed-value>Arqueobotânico</displayed-value>
-       <stored-value>Arqueobotânico</stored-value>
+       <stored-value>archaeobotanical</stored-value>
      </pair>
 
      <pair>
        <displayed-value>Zooarqueológico</displayed-value>
-       <stored-value>Zooarqueológico</stored-value>
+       <stored-value>zooarchaeological</stored-value>
      </pair>
 
      <pair>
        <displayed-value>Outros</displayed-value>
-       <stored-value>Outros</stored-value>
+       <stored-value>others</stored-value>
      </pair>
    </value-pairs>
 
@@ -906,107 +906,107 @@
    <value-pairs value-pairs-name="materialtype" dc-term="medium">
      <pair>
        <displayed-value>Borracha</displayed-value>
-       <stored-value>Borracha</stored-value>
+       <stored-value>rubber</stored-value>
      </pair>
 
      <pair>
        <displayed-value>Carvão</displayed-value>
-       <stored-value>Carvão</stored-value>
+       <stored-value>carbon</stored-value>
      </pair>
 
      <pair>
        <displayed-value>Cerâmica</displayed-value>
-       <stored-value>Cerâmica</stored-value>
+       <stored-value>ceramic</stored-value>
      </pair>
 
      <pair>
        <displayed-value>Faiança</displayed-value>
-       <stored-value>Faiança</stored-value>
+       <stored-value>earthenware</stored-value>
      </pair>
 
      <pair>
        <displayed-value>Porcelana</displayed-value>
-       <stored-value>Porcelana</stored-value>
+       <stored-value>porcelain</stored-value>
      </pair>
 
      <pair>
        <displayed-value>Couro</displayed-value>
-       <stored-value>Couro</stored-value>
+       <stored-value>leather</stored-value>
      </pair>
 
      <pair>
        <displayed-value>Fóssil</displayed-value>
-       <stored-value>Fóssil</stored-value>
+       <stored-value>fossil</stored-value>
      </pair>
 
      <pair>
        <displayed-value>Lítico</displayed-value>
-       <stored-value>Lítico</stored-value>
+       <stored-value>lithic</stored-value>
      </pair>
 
      <pair>
        <displayed-value>Madeira</displayed-value>
-       <stored-value>Madeira</stored-value>
+       <stored-value>wood</stored-value>
      </pair>
 
      <pair>
        <displayed-value>Malacológico</displayed-value>
-       <stored-value>Malacológico</stored-value>
+       <stored-value>malacological</stored-value>
      </pair>
 
      <pair>
        <displayed-value>Metal</displayed-value>
-       <stored-value>Metal</stored-value>
+       <stored-value>metal</stored-value>
      </pair>
 
      <pair>
        <displayed-value>Osso</displayed-value>
-       <stored-value>Osso</stored-value>
+       <stored-value>bone</stored-value>
      </pair>
 
      <pair>
        <displayed-value>Papel</displayed-value>
-       <stored-value>Papel</stored-value>
+       <stored-value>paper</stored-value>
      </pair>
 
      <pair>
        <displayed-value>Sedimento</displayed-value>
-       <stored-value>Sedimento</stored-value>
+       <stored-value>sediment</stored-value>
      </pair>
 
      <pair>
        <displayed-value>Plástico</displayed-value>
-       <stored-value>Plástico</stored-value>
+       <stored-value>plastic</stored-value>
      </pair>
 
      <pair>
        <displayed-value>Têxtil</displayed-value>
-       <stored-value>Têxtil</stored-value>
+       <stored-value>fabric</stored-value>
      </pair>
 
      <pair>
        <displayed-value>Flora</displayed-value>
-       <stored-value>Flora</stored-value>
+       <stored-value>flora</stored-value>
      </pair>
 
      <pair>
        <displayed-value>Fauna</displayed-value>
-       <stored-value>Fauna</stored-value>
+       <stored-value>fauna</stored-value>
      </pair>
 
      <pair>
        <displayed-value>Vidro</displayed-value>
-       <stored-value>Vidro</stored-value>
+       <stored-value>glass</stored-value>
      </pair>
 
      <pair>
        <displayed-value>Indeterminado</displayed-value>
-       <stored-value>Indeterminado</stored-value>
+       <stored-value>inderterminated</stored-value>
      </pair>
 
      <pair>
        <displayed-value>Outros</displayed-value>
-       <stored-value>Outros</stored-value>
+       <stored-value>others</stored-value>
      </pair>
 
    </value-pairs>
@@ -1015,82 +1015,82 @@
    <value-pairs value-pairs-name="productiontechnique" dc-term="type">
      <pair>
        <displayed-value>Lascado</displayed-value>
-       <stored-value>Lascado</stored-value>
+       <stored-value>flake</stored-value>
      </pair>
 
      <pair>
        <displayed-value> Picoteado </displayed-value>
-       <stored-value>Picoteado </stored-value>
+       <stored-value>shredding </stored-value>
      </pair>
 
      <pair>
        <displayed-value> Polido </displayed-value>
-       <stored-value>Polido </stored-value>
+       <stored-value>polish </stored-value>
      </pair>
 
      <pair>
        <displayed-value>Modelado </displayed-value>
-       <stored-value>Modelado</stored-value>
+       <stored-value>modeled</stored-value>
      </pair>
 
      <pair>
        <displayed-value>Perfurado</displayed-value>
-       <stored-value>Perfurado </stored-value>
+       <stored-value>perfuration </stored-value>
      </pair>
 
      <pair>
        <displayed-value>Roletado</displayed-value>
-       <stored-value>Roletado </stored-value>
+       <stored-value>rolet </stored-value>
      </pair>
 
      <pair>
        <displayed-value>Torneado</displayed-value>
-       <stored-value>Torneado</stored-value>
+       <stored-value>turning</stored-value>
      </pair>
 
      <pair>
        <displayed-value>Moldado</displayed-value>
-       <stored-value>Moldado</stored-value>
+       <stored-value>molded</stored-value>
      </pair>
 
      <pair>
        <displayed-value>Taxidermizado</displayed-value>
-       <stored-value>Taxidermizado</stored-value>
+       <stored-value>taxidermy</stored-value>
      </pair>
 
      <pair>
        <displayed-value>Tecido</displayed-value>
-       <stored-value>Tecido</stored-value>
+       <stored-value>woven</stored-value>
      </pair>
 
      <pair>
        <displayed-value>Assoprado</displayed-value>
-       <stored-value>Assoprado</stored-value>
+       <stored-value>blowed</stored-value>
      </pair>
 
      <pair>
        <displayed-value>Fundido</displayed-value>
-       <stored-value>Fundido</stored-value>
+       <stored-value>cast</stored-value>
      </pair>
 
      <pair>
        <displayed-value>Forjado</displayed-value>
-       <stored-value>Forjado</stored-value>
+       <stored-value>forged</stored-value>
      </pair>
 
      <pair>
        <displayed-value>Indeterminado</displayed-value>
-       <stored-value>Indeterminado</stored-value>
+       <stored-value>inderteminated</stored-value>
      </pair>
 
      <pair>
        <displayed-value>Outro</displayed-value>
-       <stored-value>Outro</stored-value>
+       <stored-value>other</stored-value>
      </pair>
 
      <pair>
        <displayed-value>Não se aplica</displayed-value>
-       <stored-value>Não se aplica</stored-value>
+       <stored-value>notapplicable</stored-value>
      </pair>
 
    </value-pairs>
@@ -1099,83 +1099,83 @@
    <value-pairs value-pairs-name="decoration" dc-term="type">
      <pair>
        <displayed-value>Alisado</displayed-value>
-       <stored-value>Alisado</stored-value>
+       <stored-value>smooth</stored-value>
      </pair>
 
      <pair>
        <displayed-value>Brunido</displayed-value>
-       <stored-value>Brunido</stored-value>
+       <stored-value>burned</stored-value>
      </pair>
 
      <pair>
        <displayed-value>Corrugado</displayed-value>
-       <stored-value>Corrugado</stored-value>
+       <stored-value>corrugated</stored-value>
      </pair>
 
      <pair>
        <displayed-value>Escovado</displayed-value>
-       <stored-value>Escovado</stored-value>
+       <stored-value>brushed</stored-value>
      </pair>
 
      <pair>
        <displayed-value>Ungulado</displayed-value>
-       <stored-value>Ungulado</stored-value>
+       <stored-value>ungulate</stored-value>
      </pair>
 
      <pair>
        <displayed-value>Incisão</displayed-value>
-       <stored-value>Incisão</stored-value>
+       <stored-value>incision</stored-value>
      </pair>
 
      <pair>
        <displayed-value>Impressão</displayed-value>
-       <stored-value>Impressão</stored-value>
+       <stored-value>print</stored-value>
      </pair>
 
      <pair>
        <displayed-value>Plástica</displayed-value>
-       <stored-value>Plástica</stored-value>
+       <stored-value>plastic</stored-value>
      </pair>
 
      <pair>
        <displayed-value>Pintado</displayed-value>
-       <stored-value>Pintado</stored-value>
+       <stored-value>painted</stored-value>
      </pair>
 
      <pair>
        <displayed-value>Punção</displayed-value>
-       <stored-value>Punção</stored-value>
+       <stored-value>puncture</stored-value>
      </pair>
 
      <pair>
        <displayed-value>Aplique</displayed-value>
-       <stored-value>Aplique</stored-value>
+       <stored-value>adornment</stored-value>
      </pair>
 
      <pair>
        <displayed-value>Engobe</displayed-value>
-       <stored-value>Engobe</stored-value>
+       <stored-value>engobe</stored-value>
      </pair>
 
      <pair>
        <displayed-value>Estêncil</displayed-value>
-       <stored-value>Estêncil</stored-value>
+       <stored-value>stencil</stored-value>
      </pair>
 
 
      <pair>
        <displayed-value>Entalhe</displayed-value>
-       <stored-value>Entalhe</stored-value>
+       <stored-value>notch</stored-value>
      </pair>
 
      <pair>
        <displayed-value>Outro</displayed-value>
-       <stored-value>Outro</stored-value>
+       <stored-value>other</stored-value>
      </pair>
 
      <pair>
        <displayed-value>Não se aplica</displayed-value>
-       <stored-value>Não se aplica</stored-value>
+       <stored-value>notapplicable</stored-value>
      </pair>
 
    </value-pairs>
@@ -1185,17 +1185,17 @@
    <value-pairs value-pairs-name="integrity" dc-term="type">
      <pair>
        <displayed-value>Íntegro</displayed-value>
-       <stored-value>Íntegro</stored-value>
+       <stored-value>intact</stored-value>
      </pair>
 
      <pair>
        <displayed-value>Fragmentado</displayed-value>
-       <stored-value>Fragmentado</stored-value>
+       <stored-value>fragmented</stored-value>
      </pair>
 
      <pair>
        <displayed-value>Reconstituído</displayed-value>
-       <stored-value>Reconstituído</stored-value>
+       <stored-value>restored</stored-value>
      </pair>
 
    </value-pairs>  
@@ -1204,22 +1204,22 @@
    <value-pairs value-pairs-name="conservationstate" dc-term="type">
      <pair>
        <displayed-value>Bom (sem deterioração)</displayed-value>
-       <stored-value>Bom</stored-value>
+       <stored-value>good</stored-value>
      </pair>
      
      <pair>
        <displayed-value>Regular - (não compromete o todo. Ex.: fissuras, esmaecimento, afloramento de sais, esfarelamento etc.) </displayed-value>
-       <stored-value>Regular</stored-value>
+       <stored-value>regular</stored-value>
      </pair>
      
      <pair>
        <displayed-value> Ruim (compromete o todo. Ex.: quebradiço, com manchas, alto grau de corrosão) </displayed-value>
-       <stored-value> Ruim </stored-value>
+       <stored-value> bad </stored-value>
      </pair>
      
      <pair>
        <displayed-value> Péssimo (perdas irreversíveis) </displayed-value>
-       <stored-value> Péssimo </stored-value>
+       <stored-value> irrecoverable </stored-value>
      </pair>
    </value-pairs>
    
@@ -1230,52 +1230,52 @@
 
      <pair>
        <displayed-value> Higienização a seco </displayed-value>
-       <stored-value>Higienização a seco</stored-value>
+       <stored-value>dryhigienization</stored-value>
      </pair>
 
      <pair>
        <displayed-value> Higienização com água </displayed-value>
-       <stored-value>Higienização com água </stored-value>
+       <stored-value>waterhigienization </stored-value>
      </pair>
 
      <pair>
        <displayed-value> Colagem/refixação </displayed-value>
-       <stored-value>Colagem/refixação</stored-value>
+       <stored-value>pasted</stored-value>
      </pair>
 
      <pair>
        <displayed-value> Restauração/reconstituição </displayed-value>
-       <stored-value>Restauração/reconstituição</stored-value>
+       <stored-value>restauration</stored-value>
      </pair>
 
      <pair>
        <displayed-value> Dessalinização </displayed-value>
-       <stored-value>Dessalinização</stored-value>
+       <stored-value>dessalinization</stored-value>
      </pair>
 
      <pair>
        <displayed-value> Remoção </displayed-value>
-       <stored-value>Remoção</stored-value>
+       <stored-value>remotion</stored-value>
      </pair>
 
      <pair>
        <displayed-value> Consolidação </displayed-value>
-       <stored-value>Consolidação</stored-value>
+       <stored-value>consolidation</stored-value>
      </pair>
 
      <pair>
        <displayed-value> Estabilização </displayed-value>
-       <stored-value>Estabilização</stored-value>
+       <stored-value>stabilization</stored-value>
      </pair>
 
      <pair>
        <displayed-value> Outro </displayed-value>
-       <stored-value>Outro</stored-value>
+       <stored-value>other</stored-value>
      </pair>
 
      <pair>
        <displayed-value> Não se aplica </displayed-value>
-       <stored-value>Não se aplica</stored-value>
+       <stored-value>notapplicable</stored-value>
      </pair>
 
    </value-pairs>
@@ -1286,42 +1286,42 @@
    <value-pairs value-pairs-name="packaging" dc-term="modified">
      <pair>
        <displayed-value>Saco Plástico (Polietileno ou poliéster)</displayed-value>
-       <stored-value>Saco Plástico (Polietileno ou poliéster)</stored-value>
+       <stored-value>plasticpack</stored-value>
      </pair>
 
      <pair>
        <displayed-value>Tecido não tecido de polipropileno (TNT)</displayed-value>
-       <stored-value>Tecido não tecido de polipropileno (TNT)</stored-value>
+       <stored-value>plasticfabricpack</stored-value>
      </pair>
 
      <pair>
        <displayed-value>Não tecido de polietileno de alta densidade (Tyvek)</displayed-value>
-       <stored-value>Não tecido de polietileno de alta densidade (Tyvek)</stored-value>
+       <stored-value>polietilenefabricpack</stored-value>
      </pair>
 
      <pair>
        <displayed-value>Plástico Bolha</displayed-value>
-       <stored-value>Plástico Bolha</stored-value>
+       <stored-value>bubbleplasticpack</stored-value>
      </pair>
 
      <pair>
        <displayed-value>Papel livre de ácido ou ph neutro</displayed-value>
-       <stored-value>Papel livre de ácido ou ph neutro</stored-value>
+       <stored-value>acidfreepaperpack</stored-value>
      </pair>
 
      <pair>
        <displayed-value>Espuma de polietileno</displayed-value>
-       <stored-value>Espuma de polietileno</stored-value>
+       <stored-value>foampack</stored-value>
      </pair>
 
      <pair>
        <displayed-value> Manta acrílica </displayed-value>
-       <stored-value>Manta acrílica</stored-value>
+       <stored-value>acrilicpack</stored-value>
      </pair>
 
      <pair>
        <displayed-value> Outro </displayed-value>
-       <stored-value>Outro</stored-value>
+       <stored-value>other</stored-value>
      </pair>
    </value-pairs>
 

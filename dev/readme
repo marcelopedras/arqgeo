@@ -58,4 +58,5 @@ Caso o banco não tenha sido configurado, utilize docker-compose up --build.
 A configuração do banco é feita automaticamente durante a configuração das imagens.
 
 
-
+#### Edição dos metadados em massa
+dspace metadata-import -f <arquivo-csv-previamente-importado>
