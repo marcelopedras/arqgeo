@@ -46,3 +46,9 @@ rebel.xml
 
 # Ignore assetstore
 assetstore/*
+
+# Ignore backup folder
+database_backups/*
+
+# Ignore .env file
+.env

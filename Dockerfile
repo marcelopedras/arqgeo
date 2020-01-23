@@ -13,7 +13,7 @@ ENV DEBIAN_FRONTEND=noninteractive
 ENV CATALINA_HOME=/usr/local/tomcat DSPACE_HOME=/dspace
 ENV JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk-amd64/
 ENV PATH=$CATALINA_HOME/bin:$DSPACE_HOME/bin:$PATH
-ENV TOMCAT_TGZ_URL=https://www.apache.org/dist/tomcat/tomcat-9/v9.0.27/bin/apache-tomcat-9.0.27.tar.gz
+ENV TOMCAT_TGZ_URL=https://www.apache.org/dist/tomcat/tomcat-9/v9.0.30/bin/apache-tomcat-9.0.30.tar.gz
 
 
 WORKDIR /tmp
@@ -106,4 +106,4 @@ WORKDIR /dspace
 
 EXPOSE 80
 
-CMD ["start-dspace"]
+CMD ["start-dspace.bash"]

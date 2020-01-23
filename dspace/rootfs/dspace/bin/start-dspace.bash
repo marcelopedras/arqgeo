@@ -4,6 +4,9 @@ POSTGRES_DB_HOST=${POSTGRES_DB_HOST:-$POSTGRES_PORT_5432_TCP_ADDR}
 POSTGRES_DB_PORT=${POSTGRES_DB_PORT:-$POSTGRES_PORT_5432_TCP_PORT}
 POSTGRES_DB_PORT=${POSTGRES_DB_PORT:-5432}
 
+# Replace env vars in local.cfg
+replace-env-vars.bash
+
 # Create and configure database
 if [ -n "$POSTGRES_DB_HOST" -a -n "$POSTGRES_DB_PORT" ]; then
     # Check if database is up
@@ -13,7 +16,7 @@ if [ -n "$POSTGRES_DB_HOST" -a -n "$POSTGRES_DB_PORT" ]; then
     done
     # Setup postgres
     >&2 echo "Postgres is up - executing command"
-    setup-postgres
+    setup-postgres.bash
 fi
 
 # Remove unused webapps

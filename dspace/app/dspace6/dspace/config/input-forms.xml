@@ -101,7 +101,7 @@
        <field>
          <dc-schema>arq</dc-schema>
          <dc-element>contributor</dc-element>
-         <dc-qualifier>entrepeneur</dc-qualifier>
+         <dc-qualifier>entrepreneur</dc-qualifier>
          <repeatable>true</repeatable>
          <label> Empreendedor </label>
          <input-type>onebox</input-type>

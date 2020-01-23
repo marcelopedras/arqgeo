@@ -8,7 +8,7 @@ services:
       - db_data:/var/lib/postgresql/data
       - ./database_backups:/dspace/database_backups
     ports:
-      - 5432:5432
+      - 127.0.0.1:5432:5432
 
 volumes:
   db_data:

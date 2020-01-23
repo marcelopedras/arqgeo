@@ -44,11 +44,12 @@ if [ $USER_EXISTS -eq 1 ]; then
   echo "User '${POSTGRES_USER}' created"
 fi
 
+# TODO - Marcelo custom - As configurações são configuradas diretamente no local.cfg por enquanto.
 # Configure database in dspace.cfg
-sed -i "s#db.url = jdbc:postgresql://postgres:5432/dspace#db.url = jdbc:postgresql://${POSTGRES_DB_HOST}:${POSTGRES_DB_PORT}/${POSTGRES_SCHEMA}#" ${DSPACE_CFG}
-sed -i "s#db.username = dspace#db.username = ${POSTGRES_USER}#" ${DSPACE_CFG}
-sed -i "s#db.password = dspace#db.password = ${POSTGRES_PASSWORD}#" ${DSPACE_CFG}
-echo "Dspace configuration changed"
+#sed -i "s#db.url = jdbc:postgresql://postgres:5432/dspace#db.url = jdbc:postgresql://${POSTGRES_DB_HOST}:${POSTGRES_DB_PORT}/${POSTGRES_SCHEMA}#" ${DSPACE_CFG}
+#sed -i "s#db.username = dspace#db.username = ${POSTGRES_USER}#" ${DSPACE_CFG}
+#sed -i "s#db.password = dspace#db.password = ${POSTGRES_PASSWORD}#" ${DSPACE_CFG}
+#echo "Dspace configuration changed"
 
 # Create DSpace administrator
 # TODO - Marcelo custom - Não criar um administrador automaticamente

@@ -1,10 +1,9 @@
 version: "2.2"
 services:
   postgres:
-    #image: postgres
     build: ./postgres
     hostname: postgres
-    #restart: always
+    restart: always
     volumes:
       - db_data:/var/lib/postgresql/data
       - ./database_backups:/dspace/database_backups
@@ -13,31 +12,42 @@ services:
   dspace:
 #    image: dspace-63_dspace:latest
     build: .
-#    ports:
-#      - 80:8080
-    expose:
-      - 80
+    restart: always
+    ports:
+      - 8080:80
+#    expose:
+#      - 80
     networks:
       - default
       - arqgeo
     depends_on:
       - postgres
     environment:
-      - POSTGRES_DB_HOST=postgres
-      - POSTGRES_ADMIN_USER=postgres
-      - POSTGRES_ADMIN_PASSWORD=postgres
-      - POSTGRES_SCHEMA=dspace
-      - POSTGRES_USER=dspace
-      - POSTGRES_PASSWORD=password
-      - EMAIL_USER=arqgeo@ict.ufvjm.edu.br
-      - EMAIL_PASSWORD=ermjit6cYNeDZ1QGDyggWW71ZaXnDI
+      POSTGRES_DB_HOST: ${POSTGRES_DB_HOST}
+      POSTGRES_ADMIN_USER: ${POSTGRES_ADMIN_USER}
+      POSTGRES_ADMIN_PASSWORD: ${POSTGRES_ADMIN_PASSWORD}
+      POSTGRES_SCHEMA: ${POSTGRES_SCHEMA}
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      DSPACE_HOSTNAME: ${DSPACE_HOSTNAME}
+      DSPACE_BASEURL: ${DSPACE_BASEURL}
+      DB_URL: ${DB_URL}
+      DB_USERNAME: ${POSTGRES_USER}
+      DB_PASSWORD: ${POSTGRES_PASSWORD}
+      MAIL_SERVER: ${MAIL_SERVER}
+      MAIL_SERVER_USERNAME: ${MAIL_SERVER_USERNAME}
+      MAIL_SERVER_PASSWORD: ${MAIL_SERVER_PASSWORD}
+      MAIL_SERVER_PORT: ${MAIL_SERVER_PORT}
+      MAIL_FROM_ADDRESS: ${MAIL_FROM_ADDRESS}
+      MAIL_FEEDBACK_RECIPIENT: ${MAIL_FEEDBACK_RECIPIENT}
+      MAIL_ADMIN: ${MAIL_ADMIN}
     volumes:
       - ./assetstore:/dspace/assetstore
 
-    command: start-dspace
+    command: start-dspace.bash
     mem_limit: 1024m
     extra_hosts:
-      - "arqgeo.ict.ufvjm.edu.br:127.0.0.1"
+      - ${DSPACE_HOSTNAME}:127.0.0.1
 
 volumes:
   db_data:
