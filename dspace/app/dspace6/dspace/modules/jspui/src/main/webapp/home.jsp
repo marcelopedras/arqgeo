@@ -273,3 +273,6 @@ if (communities != null && communities.size() != 0)
 	</div>
 </div>
 </dspace:layout>
+<%-- Marcelo custom - Adicionando script para fazer o carousel começar a girar --%>
+<script type="text/javascript" src="<%= request.getContextPath() %>/static/js/carousel-start.js"></script>
+

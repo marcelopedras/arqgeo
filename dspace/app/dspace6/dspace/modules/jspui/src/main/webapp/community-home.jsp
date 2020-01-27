@@ -40,6 +40,8 @@
 <%@ page import="org.dspace.services.factory.DSpaceServicesFactory" %>
 <%@ page import="javax.servlet.jsp.jstl.fmt.LocaleSupport" %>
 
+<%@ page import="org.dspace.core.Constants" %>
+
 <%
     // Retrieve attributes
     Community community = (Community) request.getAttribute( "community" );
@@ -163,12 +165,16 @@
 		  <div class="carousel-inner">
 	<%	for (int i = 0; i < items.size(); i++)
 		{
-			String title = items.get(i).getName();
-			String displayTitle = "Untitled";
-			if (StringUtils.isNotBlank(title))
+			Item item = items.get(i);
+
+			// Marcelo custom - Recuperando o título
+			String displayTitle = item.getItemService().getMetadataFirstValue(item, "dc", "title", null, Item.ANY);
+			if (displayTitle == null)
 			{
-				displayTitle = Utils.addEntities(title);
+				displayTitle = "Untitled";
 			}
+
+
 			// Marcelo custom - Recuperando o abstract
 			String displayAbstract = items.get(i).getItemService().getMetadataFirstValue(items.get(i), "dc", "description", "abstract", Item.ANY);
 			if (displayAbstract == null)
@@ -176,24 +182,35 @@
 				displayAbstract = "";
 			}
 
+
+			String originalImage = "/jspui/image/no-image.png";
+
+//			Marcelo custom - Recuperando imagem do item
+			Thumbnail thumbnail = item.getItemService().getThumbnail(UIUtil.obtainContext(request), item, true);
+
+			if (thumbnail!=null) {
+				Bitstream original = thumbnail.getOriginal();
+				originalImage = request.getContextPath() + "/bitstream/" + item.getHandle() + "/" + original.getSequenceID() + "/" + UIUtil.encodeBitstreamName(original.getName(), Constants.DEFAULT_ENCODING);
+			}
+
 			%>
 
-<%--		    <div style="padding-bottom: 50px; min-height: 200px;" class="item <%= first?"active":""%>">--%>
-<%--		      <div style="padding-left: 80px; padding-right: 80px; display: inline-block;"><%= StringUtils.abbreviate(displayTitle, 400) %> --%>
-<%--		      	<a href="<%= request.getContextPath() %>/handle/<%=items.get(i).getHandle() %>" class="btn btn-success">See</a>--%>
-<%--		      </div>--%>
-<%--		    </div>--%>
 
 <%--			  Marcelo custom - Deixando o carousel igual ao da página inicial--%>
 			  <div style="padding-bottom: 50px; min-height: 200px;" class="item <%= first?"active":""%>">
-				  <div style="padding-left: 80px; padding-right: 80px; display: inline-block;width: 100%; text-align: center">
-					  <h4 style="text-align: center"><%= StringUtils.abbreviate(displayTitle, 400) %></h4>
-					  <p style="text-align: justify"><%= StringUtils.abbreviate(displayAbstract, 500) %></p>
-					  <span class="text-center">
-					  <a href="<%= request.getContextPath() %>/handle/<%=items.get(i).getHandle() %>" class="btn btn-success">
-						  <fmt:message key="org.dspace.app.webui.jsptag.ItemTag.view"/>
-					  </a>
-				  </span>
+				  <div style="padding-left: 80px; padding-right: 80px; display: inline-block;width: 100%">
+
+					  <div style="text-align: center">
+						  <img style="min-height: 100px;max-height: 300px" class="img-thumbnail img-responsive" src="<%= originalImage %>">
+					  </div>
+					  <div class="caption text-center">
+						  <h4><%= Utils.addEntities(StringUtils.abbreviate(displayTitle, 400)) %></h4>
+						  <h5 style="text-align: justify"><%= Utils.addEntities(StringUtils.abbreviate(displayAbstract, 500)) %></h5>
+						  <a href="<%= request.getContextPath() %>/handle/<%=item.getHandle() %>" class="btn btn-success">
+							  <fmt:message key="org.dspace.app.webui.jsptag.ItemTag.view"/>
+						  </a>
+					  </div>
+
 				  </div>
 			  </div>
 <%
@@ -428,3 +445,5 @@
 		<%@ include file="discovery/static-sidebar-facet.jsp" %>
   </dspace:sidebar>
 </dspace:layout>
+<%-- Marcelo custom - Adicionando script para fazer o carousel começar a girar --%>
+<script type="text/javascript" src="<%= request.getContextPath() %>/static/js/carousel-start.js"></script>
