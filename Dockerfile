@@ -1,7 +1,7 @@
-#FROM maven:3.6.1-jdk-8-alpine as cache
-#COPY ./dspace/app/dspace6 /usr/src/dspace
-#WORKDIR /usr/src/dspace
-#RUN mvn dependency:resolve
+FROM maven:3.6.1-jdk-8-alpine as cache
+COPY ./dspace/app/dspace6 /usr/src/dspace
+WORKDIR /usr/src/dspace
+RUN mvn dependency:resolve
 
 
 
@@ -13,7 +13,7 @@ ENV DEBIAN_FRONTEND=noninteractive
 ENV CATALINA_HOME=/usr/local/tomcat DSPACE_HOME=/dspace
 ENV JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk-amd64/
 ENV PATH=$CATALINA_HOME/bin:$DSPACE_HOME/bin:$PATH
-ENV TOMCAT_TGZ_URL=https://www.apache.org/dist/tomcat/tomcat-9/v9.0.30/bin/apache-tomcat-9.0.30.tar.gz
+#ENV TOMCAT_TGZ_URL=https://www.apache.org/dist/tomcat/tomcat-9/v$TOMCAT_VER/bin/apache-tomcat-$TOMCAT_VER.tar.gz
 
 
 WORKDIR /tmp
@@ -35,6 +35,8 @@ RUN apt update && apt upgrade -y \
         ghostscript \
         cron \
     && mkdir -p "$CATALINA_HOME" \
+    && TOMCAT_VER=`curl --silent https://downloads.apache.org/tomcat/tomcat-9/ | grep v9 | awk '{split($5,c,">v") ; split(c[2],d,"/") ; print d[1]}'` \
+    && TOMCAT_TGZ_URL=https://www.apache.org/dist/tomcat/tomcat-9/v$TOMCAT_VER/bin/apache-tomcat-$TOMCAT_VER.tar.gz \
     && curl -fSL "$TOMCAT_TGZ_URL" -o tomcat.tar.gz \
     && tar -xf tomcat.tar.gz --strip-components=1 -C "$CATALINA_HOME" \
     && rm -rf tomcat.tar.gz \
@@ -68,7 +70,7 @@ COPY ./dspace/config/noticias-topo.html dspace/dspace/config/
 COPY ./dspace/config/noticias-lado.html dspace/dspace/config/
 
 # Add .m2 cache to project
-#COPY --from=cache /root/.m2 /root/.m2
+COPY --from=cache /root/.m2 /root/.m2
 
 RUN cd dspace && mvn clean package -P '!dspace-lni,!dspace-oai,!dspace-sword,!dspace-swordv2,!dspace-xmlui'
 
@@ -78,6 +80,7 @@ RUN cd dspace/dspace/target/dspace-installer \
 RUN rm -fr "$CATALINA_HOME/webapps" && mv -f /dspace/webapps "$CATALINA_HOME" \
     && sed -i s/CONFIDENTIAL/NONE/ /usr/local/tomcat/webapps/rest/WEB-INF/web.xml
 
+# Cleanup
 RUN rm -rf /usr/local/tomcat/webapps/oai \
     && rm -rf /usr/local/tomcat/webapps/sword \
     && rm -rf /usr/local/tomcat/webapps/swordv2 \
@@ -95,7 +98,7 @@ COPY ./dspace/config/noticias-topo.html /dspace/config/noticias-topo.html
 COPY ./dspace/config/noticias-lado.html /dspace/config/noticias-lado.html
 
 # Add cron task file
-COPY ./cron_tasks/dspace_tasks.cron /dspace/dspace_tasks.cron
+COPY ./dspace/cron_tasks/dspace_tasks.cron /dspace/dspace_tasks.cron
 RUN chmod +x /dspace/dspace_tasks.cron && crontab /dspace/dspace_tasks.cron && touch /var/log/cronlog
 
 RUN chmod u+x -R /dspace/bin/
