@@ -22,8 +22,13 @@
     <name>local</name>
     <namespace>http://dspace.org/namespace/local/</namespace>
   </dc-schema>
+<!-- Marcelo custom - schema arq utilizado no arqgeo. Será carregado durante uma instalação limpa.-->
+  <dc-schema>
+    <name>arq</name>
+    <namespace>http://arqgeo.ict.ufvjm.edu.br/metadata/arq</namespace>
+  </dc-schema>
 
-<!--
+<!-- Example
   <dc-type>
     <schema>local</schema>
     <element></element>
@@ -31,5 +36,224 @@
     <scope_note>Description of example metadata field.</scope_note>
   </dc-type>
 -->
-<!--TODO Marcelo - Adicionar schema arq aqui-->
+
+  <dc-type>
+    <schema>arq</schema>
+    <element>contributor</element>
+    <qualifier>researcheremail</qualifier>
+    <scope_note>E-mail do pesquisador responsável.</scope_note>
+  </dc-type>
+
+  <dc-type>
+    <schema>arq</schema>
+    <element>contributor</element>
+    <qualifier>researcherphone</qualifier>
+    <scope_note>Telefone do pesquisador responsável.</scope_note>
+  </dc-type>
+
+  <dc-type>
+    <schema>arq</schema>
+    <element>contributor</element>
+    <qualifier>company</qualifier>
+    <scope_note>Empresa de Arqueologia.</scope_note>
+  </dc-type>
+
+  <dc-type>
+    <schema>arq</schema>
+    <element>contributor</element>
+    <qualifier>entrepreneur</qualifier>
+    <scope_note>Patrocinador do empreendimento.</scope_note>
+  </dc-type>
+
+  <dc-type>
+    <schema>arq</schema>
+    <element>physicalobject</element>
+    <qualifier>category</qualifier>
+    <scope_note>Categoria em que a peça se enquadra. Artefato, Ecofato, Bioarqueológico, Estrutura/feição, Sedimento/solo, Arqueobotânico, Zooarqueológico ou Outros.</scope_note>
+  </dc-type>
+
+  <dc-type>
+    <schema>arq</schema>
+    <element>project</element>
+    <qualifier>name</qualifier>
+    <scope_note>Nome do projeto registrado junto ao IPHAN.</scope_note>
+  </dc-type>
+
+  <dc-type>
+    <schema>arq</schema>
+    <element>identifier</element>
+    <qualifier>processnumber</qualifier>
+    <scope_note>Número do processo junto ao IPHAN.</scope_note>
+  </dc-type>
+
+  <dc-type>
+    <schema>arq</schema>
+    <element>identifier</element>
+    <qualifier>registernumber</qualifier>
+    <scope_note>Número do registro inserido nas peças arquelógicas.</scope_note>
+  </dc-type>
+
+  <dc-type>
+    <schema>arq</schema>
+    <element>coverage</element>
+    <qualifier>state</qualifier>
+    <scope_note>Estado aonde foi encontrado o material arqueológico.</scope_note>
+  </dc-type>
+
+  <dc-type>
+    <schema>arq</schema>
+    <element>coverage</element>
+    <qualifier>city</qualifier>
+    <scope_note>Município aonde foi encontrado o material arqueológico.</scope_note>
+  </dc-type>
+
+  <dc-type>
+    <schema>arq</schema>
+    <element>coverage</element>
+    <qualifier>geographicregion</qualifier>
+    <scope_note>Define a macrorregião de origem do material. Ex: Vale do Jequitinhonha.</scope_note>
+  </dc-type>
+
+  <dc-type>
+    <schema>arq</schema>
+    <element>spatial</element>
+    <qualifier>area</qualifier>
+    <scope_note>Descrição do local onde o artefato foi encontrado.</scope_note>
+  </dc-type>
+
+  <dc-type>
+    <schema>arq</schema>
+    <element>spatial</element>
+    <qualifier>square</qualifier>
+    <scope_note>Quadrícula. Referente a identificação do terreno do sítio arqueológico.</scope_note>
+  </dc-type>
+
+  <dc-type>
+    <schema>arq</schema>
+    <element>spatial</element>
+    <qualifier>quatrain</qualifier>
+    <scope_note>Quadra. Referente a identificação do terreno do sítio arqueológico.</scope_note>
+  </dc-type>
+
+  <dc-type>
+    <schema>arq</schema>
+    <element>spatial</element>
+    <qualifier>survey</qualifier>
+    <scope_note>Sondagem. Referente a identificação do terreno do sítio arqueológico.</scope_note>
+  </dc-type>
+
+  <dc-type>
+    <schema>arq</schema>
+    <element>spatial</element>
+    <qualifier>testpit</qualifier>
+    <scope_note>Poço teste. Referente a identificação do terreno do sítio arqueológico.</scope_note>
+  </dc-type>
+
+  <dc-type>
+    <schema>arq</schema>
+    <element>spatial</element>
+    <qualifier>partofstructure</qualifier>
+    <scope_note>Estrutura. Referente a identificação do terreno do sítio arqueológico.</scope_note>
+  </dc-type>
+
+  <dc-type>
+    <schema>arq</schema>
+    <element>spatial</element>
+    <qualifier>other</qualifier>
+    <scope_note>Outra indicação de localização. Referente a identificação do terreno do sítio arqueológico.</scope_note>
+  </dc-type>
+
+  <dc-type>
+    <schema>arq</schema>
+    <element>spatial</element>
+    <qualifier>level</qualifier>
+    <scope_note>Nível. Profundidade em que o material foi encontrado.</scope_note>
+  </dc-type>
+
+  <dc-type>
+    <schema>arq</schema>
+    <element>medium</element>
+    <qualifier>materialtype</qualifier>
+    <scope_note>Materiais que compõem o artefato. Borracha, Carvão, Cerâmica, Faiança, Porcelana, Couro, Fóssil, Lítico, Madeira, Malacológico, Metal, Osso, Papel, Sedimento, Plástico, Têxtil, Flora, Fauna, Vidro, Indeterminado ou Outros.</scope_note>
+  </dc-type>
+
+  <dc-type>
+    <schema>arq</schema>
+    <element>type</element>
+    <qualifier>productiontechnique</qualifier>
+    <scope_note>Técnicas de Produção. Lascado, Picoteado, Polido, Modelado, Perfurado, Roletado, Torneado, Moldado, Taxidermizado, Tecido, Assoprado, Fundido, Forjado, Indeterminado ou Outros.</scope_note>
+  </dc-type>
+
+  <dc-type>
+    <schema>arq</schema>
+    <element>type</element>
+    <qualifier>decoration</qualifier>
+    <scope_note>Tipo de decoração. Alisado, Brunido, Corrugado, Escovado, Ungulado, Incisão, Impressão, Plástica, Pintado, Punção, Aplique, Engobe, Estêncil, Entalhe, Não se aplica ou Outros.</scope_note>
+  </dc-type>
+
+  <dc-type>
+    <schema>arq</schema>
+    <element>type</element>
+    <qualifier>integrity</qualifier>
+    <scope_note>Integridade do artefato. Íntegro, Fragmentado ou Reconstituído.</scope_note>
+  </dc-type>
+
+  <dc-type>
+    <schema>arq</schema>
+    <element>type</element>
+    <qualifier>conservationstate</qualifier>
+    <scope_note>Estado de conservação, condições físicas, grau de deterioração e a necessidade de intervenção. Bom (sem deterioração); Regular (não compromete o todo. Ex.: fissuras, esmaecimento, afloramento de sais, esfarelamento etc.); Ruim (compromete o todo. Ex.: quebradiço, com manchas, alto grau de corrosão) ou Péssimo (perdas irreversíveis).</scope_note>
+  </dc-type>
+
+  <dc-type>
+    <schema>arq</schema>
+    <element>type</element>
+    <qualifier>conservationstatedescription</qualifier>
+    <scope_note>Descrição textual do estado de conservação do artefato.</scope_note>
+  </dc-type>
+
+  <dc-type>
+    <schema>arq</schema>
+    <element>modified</element>
+    <qualifier>interventions</qualifier>
+    <scope_note>Intervenções sofridas. Higienização a seco, Higienização com água, Colagem/refixação, Restauração/reconstituição, Dessalinização, Remoção, Consolidação, Estabilização, Outros ou Não se aplica.</scope_note>
+  </dc-type>
+
+  <dc-type>
+    <schema>arq</schema>
+    <element>modified</element>
+    <qualifier>packaging</qualifier>
+    <scope_note>Acondicionamento. Saco Plástico (Polietileno ou poliéster), Tecido não tecido de polipropileno (TNT), Não tecido de polietileno de alta densidade (Tyvek), Plástico Bolha, Papel, Papel livre de ácido ou ph neutro, Espuma de polietileno, Manta acrílica, Não possui ou Outros.</scope_note>
+  </dc-type>
+
+  <dc-type>
+    <schema>arq</schema>
+    <element>tableofcontents</element>
+    <qualifier>quantity</qualifier>
+    <scope_note>Quantidade do artefato, quantidade de itens.</scope_note>
+  </dc-type>
+
+  <dc-type>
+    <schema>arq</schema>
+    <element>location</element>
+    <qualifier>boxid</qualifier>
+    <scope_note>Identificação da caixa onde se encontra o artefato.</scope_note>
+  </dc-type>
+
+  <dc-type>
+    <schema>arq</schema>
+    <element>location</element>
+    <qualifier>shelflevel</qualifier>
+    <scope_note>Identificação de qual estante da prateleira está a caixa do artefato.</scope_note>
+  </dc-type>
+
+  <dc-type>
+    <schema>arq</schema>
+    <element>location</element>
+    <qualifier>shelfid</qualifier>
+    <scope_note>Identificação da prateleira onde está o artefato.</scope_note>
+  </dc-type>
+
 </dspace-dc-types>
+
+

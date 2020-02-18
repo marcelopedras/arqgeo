@@ -52,5 +52,4 @@ fi
 #echo "Dspace configuration changed"
 
 # Create DSpace administrator
-# TODO - Marcelo custom - Não criar um administrador automaticamente
-#dspace create-administrator -e ${ADMIN_EMAIL:-admin@mail.com} -f ${ADMIN_FIRSTNAME:-DSpace} -l ${ADMIN_LASTNAME:-Admin} -p ${ADMIN_PASSWD:-admin123} -c ${ADMIN_LANGUAGE:-en}
+dspace create-administrator -e ${ADMIN_EMAIL:-admin@mail.com} -f ${ADMIN_FIRSTNAME:-DSpace} -l ${ADMIN_LASTNAME:-Admin} -p ${ADMIN_PASSWD:-admin123} -c ${ADMIN_LANGUAGE:-en}

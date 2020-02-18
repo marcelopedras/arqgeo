@@ -1,7 +1,7 @@
-#FROM maven:3.6.1-jdk-8-alpine as cache
-#COPY ./dspace/app/dspace6 /usr/src/dspace
-#WORKDIR /usr/src/dspace
-#RUN mvn dependency:resolve
+FROM maven:3.6.1-jdk-8-alpine as cache
+COPY ./dspace/app/dspace6 /usr/src/dspace
+WORKDIR /usr/src/dspace
+RUN mvn -nsu dependency:resolve -P '!dspace-lni,!dspace-oai,!dspace-sword,!dspace-swordv2,!dspace-xmlui'
 
 
 FROM debian:9
@@ -68,9 +68,9 @@ COPY ./dspace/config/noticias-topo.html dspace/dspace/config/
 COPY ./dspace/config/noticias-lado.html dspace/dspace/config/
 
 # Add .m2 cache to project
-#COPY --from=cache /root/.m2 /root/.m2
+COPY --from=cache /root/.m2 /root/.m2
 
-RUN cd dspace && mvn clean package -P '!dspace-lni,!dspace-oai,!dspace-sword,!dspace-swordv2,!dspace-xmlui' \
+RUN cd dspace && mvn -nsu clean package -P '!dspace-lni,!dspace-oai,!dspace-sword,!dspace-swordv2,!dspace-xmlui' \
 #RUN cd dspace && mvn package -P '!dspace-lni,!dspace-oai,!dspace-sword,!dspace-swordv2,!dspace-xmlui'
     && cd dspace/target/dspace-installer \
     && ant init_installation init_configs install_code copy_webapps \

@@ -1,6 +1,6 @@
 .git/
 .idea/
 .settings/
-*/target/
+**/target
 dspace/modules/*/target/
 Dockerfile.*
