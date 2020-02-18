@@ -49,4 +49,7 @@ JAVA_OPTS="-Xmx512M -Xms512M -Dfile.encoding=UTF-8"
 #  By default they are just marked as deleted, but are not removed from the filesystem.)
  0 1 1 * * $DSPACE/bin/dspace cleanup >> /dev/null /var/log/cronlog 2>&1
 
-
+# TODO - Marcelo - Adicionar configurações adicionais para geração de estatísticas de acesso
+# Exemplos:
+# https://wiki.lib.sun.ac.za/index.php/SUNScholar/Daily_Admin/6.X
+# https://github.com/royopa/dspace-utils/blob/master/crontab
