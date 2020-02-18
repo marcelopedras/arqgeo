@@ -1,9 +1,7 @@
-FROM maven:3.6.1-jdk-8-alpine as cache
-COPY ./dspace/app/dspace6 /usr/src/dspace
-WORKDIR /usr/src/dspace
-RUN mvn dependency:resolve
-
-
+#FROM maven:3.6.1-jdk-8-alpine as cache
+#COPY ./dspace/app/dspace6 /usr/src/dspace
+#WORKDIR /usr/src/dspace
+#RUN mvn dependency:resolve
 
 
 FROM debian:9
@@ -70,25 +68,22 @@ COPY ./dspace/config/noticias-topo.html dspace/dspace/config/
 COPY ./dspace/config/noticias-lado.html dspace/dspace/config/
 
 # Add .m2 cache to project
-COPY --from=cache /root/.m2 /root/.m2
+#COPY --from=cache /root/.m2 /root/.m2
 
-RUN cd dspace && mvn clean package -P '!dspace-lni,!dspace-oai,!dspace-sword,!dspace-swordv2,!dspace-xmlui'
-
+RUN cd dspace && mvn clean package -P '!dspace-lni,!dspace-oai,!dspace-sword,!dspace-swordv2,!dspace-xmlui' \
 #RUN cd dspace && mvn package -P '!dspace-lni,!dspace-oai,!dspace-sword,!dspace-swordv2,!dspace-xmlui'
-RUN cd dspace/dspace/target/dspace-installer \
-    && ant init_installation init_configs install_code copy_webapps
-RUN rm -fr "$CATALINA_HOME/webapps" && mv -f /dspace/webapps "$CATALINA_HOME" \
-    && sed -i s/CONFIDENTIAL/NONE/ /usr/local/tomcat/webapps/rest/WEB-INF/web.xml
-
-# Cleanup
-RUN rm -rf /usr/local/tomcat/webapps/oai \
+    && cd dspace/target/dspace-installer \
+    && ant init_installation init_configs install_code copy_webapps \
+    && rm -fr "$CATALINA_HOME/webapps" && mv -f /dspace/webapps "$CATALINA_HOME" \
+    && sed -i s/CONFIDENTIAL/NONE/ /usr/local/tomcat/webapps/rest/WEB-INF/web.xml \
+    # Cleanup
+    && rm -rf /usr/local/tomcat/webapps/oai \
     && rm -rf /usr/local/tomcat/webapps/sword \
     && rm -rf /usr/local/tomcat/webapps/swordv2 \
     && rm -rf /usr/local/tomcat/webapps/xmlui \
     && rm -rf /root/.m2 \
     && rm -rf /tmp/dspace \
     && apt clean && rm -rf /var/lib/apt/lists/*
-
 
 
 # Install root filesystem

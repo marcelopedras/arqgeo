@@ -28,10 +28,25 @@ JAVA_OPTS="-Xmx512M -Xms512M -Dfile.encoding=UTF-8"
 #1 * * * * $DSPACE/bin/dspace curate -q admin_ui >> /var/log/cronlog
 #1 * * * * $DSPACE/bin/dspace cleanup >> /var/log/cronlog
 
+# Basic tasks
 # Reindex: 10, 18, 22 hours
  0 10,18,22 * * * $DSPACE/bin/dspace index-discovery >> /var/log/cronlog 2>&1
-# Reindex: 10, 18, 22 hours and 25 minutes
+# Generate thumbnails: 10, 18, 22 hours and 25 minutes
  25 10,18,22 * * * $DSPACE/bin/dspace filter-media >> /var/log/cronlog 2>&1
 # Generate site map: 10, 18, 22 hours and 50 minutes
  50 10,18,22 * * * $DSPACE/bin/dspace generate-sitemaps >> /var/log/cronlog 2>&1
+# Send emails at 2:00
+ 0 2 * * * $DSPACE/bin/dspace sub-daily >> /var/log/cronlog 2>&1
+# Run any Curation Tasks queued from the Admin UI at 04:00 every day
+# (Ensures that any curation task that an administrator "queued" from the Admin UI is executed
+# asynchronously behind the scenes)
+ 0 4 * * * $DSPACE/bin/dspace curate -q admin_ui >> /var/log/cronlog 2>&1
+# Mail the results of the checksum checker (see above) to the configured "mail.admin" at 05:00 every Sunday.
+# (This ensures the system administrator is notified whether any checksums were found to be different.)
+ 0 5 * * 0 $DSPACE/bin/dspace checker-emailer >> /var/log/cronlog 2>&1
+# Permanently delete any bitstreams flagged as "deleted" in DSpace, on the first of every month at 01:00
+# (This ensures that any files which were deleted from DSpace are actually removed from your local filesystem.
+#  By default they are just marked as deleted, but are not removed from the filesystem.)
+ 0 1 1 * * $DSPACE/bin/dspace cleanup >> /dev/null /var/log/cronlog 2>&1
+
 

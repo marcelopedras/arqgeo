@@ -13,10 +13,10 @@ services:
 #    image: dspace-63_dspace:latest
     build: .
     restart: always
-#    ports:
-#      - 8080:80
-    expose:
-      - 80
+    ports:
+      - 8080:80
+#    expose:
+#      - 80
     networks:
       - default
       - arqgeo
