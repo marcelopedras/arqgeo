@@ -9,7 +9,7 @@ Deve ser a versão 8 do openjdk. Tive problemas usando a 9 para compilar o solr.
 
 ### Configuração do tomcat
 
-A versão deve ser a 9. Usei a 9.0.22.
+A versão deve ser a 9. Usei a 9.0.+.
 Copie  a pasta Catalina para a pasta conf do tomcat.
 Aponte os arquivos jspui, rest e solr xml para a pasta webapps onde o projeto foi construído.
 

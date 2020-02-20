@@ -49,6 +49,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
         <meta name="Generator" content="<%= generator %>" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <%-- Marcelo custom - Google Search Console site verirication --%>
         <meta name="google-site-verification" content="X34VHXftvXRhUITagSarTS6faC9ROB1EkNKd6GKHLJc" />
         <link rel="shortcut icon" href="<%= request.getContextPath() %>/favicon.ico" type="image/x-icon"/>
         <link rel="stylesheet" href="<%= request.getContextPath() %>/static/css/jquery-ui-1.10.3.custom/redmond/jquery-ui-1.10.3.custom.css" type="text/css" />
