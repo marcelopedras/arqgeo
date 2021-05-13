@@ -10,7 +10,7 @@ O resultado desse projeto pode ser visto em: https://arqueologia.ict.ufvjm.edu.b
 
 Esse projeto surgiu da necessidade de manter um catálogo digital das peças da Reserva Técnica do LAEP (Laboratório de Arqueologia e Estudo da Paisagem), localizado no Cegeo (Centro de Estudos em Geociências) da Universidade Federal dos Vales do Jequitinhonha e Mucuri - UFVJM. Além das peças em si, esse laboratório faz a guarda de vários relatórios referente a catalogação de peças e informações referentes ao depósito e identificação das caixas onde esses objetos são guardados na reserva.
 
-Apesas da existência da informação, recuperá-la não era tão simples, visto que não havia um índice geral de que relatórios fazem referências a quais caixas, eram apenas um conjunto de tabelas não pesquisáveis. Dessa forma, localizar uma caixa ou um relatório era um pouco custoso. É aí que entra o Dspace.
+Apesar da existência da informação, recuperá-la não era tão simples. Não havia um índice geral em que os relatórios fizessem referências às caixas, eram apenas um conjunto de tabelas não pesquisáveis. Dessa forma, localizar uma caixa ou um relatório era um pouco custoso. É aí que entra o Dspace.
 
 O Dspace permite a personalização de metadados, de forma que podemos criar descritores (metadados) personalizados para descrever um item da reserva. Como esses dados são indexados, agora temos vários campos de busca para procurar por termos, acelerando muito a localização dos relatórios e dos itens na reserva.
 
